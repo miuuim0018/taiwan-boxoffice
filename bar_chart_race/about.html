@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>資料說明 — 台灣電影票房</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="bar-race.css" />
+</head>
+<body class="bcr-page bcr-page--monthly">
+  <div class="bcr-wrap bcr-wrap--wide">
+    <nav class="bcr-nav">
+      <a class="bcr-nav-link" href="home.html">總覽</a>
+      <a class="bcr-nav-link" href="index.html">排行榜動畫</a>
+      <a class="bcr-nav-link" href="monthly.html">月票房長條圖</a>
+      <a class="bcr-nav-link" href="champions.html">年度排行</a>
+      <a class="bcr-nav-link" href="analytics.html">票房分析</a>
+      <a class="bcr-nav-link bcr-nav-link--active" href="about.html">資料說明</a>
+    </nav>
+
+    <header class="hub-hero">
+      <p class="month-hero-kicker">方法與限制</p>
+      <h1>資料說明</h1>
+      <p class="bcr-coverage">本專題票房模組使用政府公開之每週院線統計，以下說明來源、計算方式與已知限制。</p>
+    </header>
+
+    <article class="about-doc">
+      <section>
+        <h2>資料來源</h2>
+        <ul>
+          <li>國家電影及視聽文化中心（TFAI）每週票房統計</li>
+          <li>政府資料開放平臺 <a href="https://data.gov.tw/dataset/94224" target="_blank" rel="noopener">dataset/94224</a></li>
+          <li>本機資料夾 <code>data/week/</code> 內 xlsx 週報（2017 起，約 391 週）</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>欄位與單位</h2>
+        <ul>
+          <li><strong>銷售金額</strong>：當週該片全台院線售票金額（新台幣），圖表多以「萬元」顯示</li>
+          <li><strong>銷售票數</strong>：當週售票張數</li>
+          <li><strong>累計金額</strong>：該片上映至該週為止的累計票房（用於排行榜動畫「歷史累計」模式）</li>
+          <li><strong>平均票價</strong>：當期全台加總之「銷售金額 ÷ 售票數」，為加權平均，含各票種（一般、優待、IMAX 等）</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>各頁面怎麼算</h2>
+        <ul>
+          <li><strong>排行榜動畫</strong>：每週一幀；「當週在映」依該週累計票房排序，「歷史累計」追蹤各片最高累計紀錄</li>
+          <li><strong>月票房</strong>：同一曆月內各週「銷售金額」加總</li>
+          <li><strong>年度排行</strong>：同一年內各週銷售金額加總；另含在映週數、週冠次數等衍生指標</li>
+          <li><strong>院線總量</strong>：該週（或該月）所有在榜電影的銷售金額／售票數加總</li>
+          <li><strong>片種</strong>：以片名關鍵字規則分類（動作、動畫、劇情等），非官方欄位</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>已知限制</h2>
+        <ul>
+          <li>資料起始約 <strong>2017/10</strong>，更新至建置當下最新一週</li>
+          <li>2018 年其中一週 xlsx 若被 OneDrive 鎖檔可能略過，該週會有缺口</li>
+          <li>月榜「items」僅存 Top 20 供列表；國別圓餅鑽取使用完整 <code>byCountryMovies</code></li>
+          <li>春節檔／暑假檔為「1–2 月」「7–8 月」週次加總之近似，非農曆精準切檔</li>
+        </ul>
+      </section>
+    </article>
+
+    <footer class="bcr-footer">
+      <a href="home.html">返回總覽</a>
+    </footer>
+  </div>
+</body>
+</html>

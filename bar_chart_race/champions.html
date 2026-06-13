@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>年度票房排行 — 爛片現形鏡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="bar-race.css" />
+</head>
+<body class="bcr-page bcr-page--monthly">
+  <div class="bcr-wrap">
+    <nav class="bcr-nav">
+      <a class="bcr-nav-link" href="home.html">總覽</a>
+      <a class="bcr-nav-link" href="index.html">排行榜動畫</a>
+      <a class="bcr-nav-link" href="monthly.html">月票房長條圖</a>
+      <a class="bcr-nav-link bcr-nav-link--active" href="champions.html">年度排行</a>
+      <a class="bcr-nav-link" href="analytics.html">票房分析</a>
+      <a class="bcr-nav-link" href="about.html">資料說明</a>
+    </nav>
+
+    <header class="champ-hero">
+      <p class="month-hero-kicker">官方週票房 · 全年加總</p>
+      <h1 id="champ-title">年度票房排行</h1>
+      <p class="bcr-coverage" id="champ-subtitle">載入中…</p>
+    </header>
+
+    <div class="champ-toolbar">
+      <div class="bcr-filters champ-filters">
+        <div class="bcr-country-filter-wrap" id="champ-country-wrap">
+          <span class="bcr-country-filter-title">國別（可多選）</span>
+          <div id="champ-country-picker"></div>
+        </div>
+        <label>
+          片種
+          <select id="champ-genre"><option value="all">全部片種</option></select>
+        </label>
+      </div>
+
+      <div class="champ-rank-modes" id="champ-rank-modes">
+        <span class="champ-rank-label">排行依據</span>
+        <button type="button" class="champ-rank-btn champ-rank-btn--active" data-rank="boxoffice">票房最高</button>
+        <button type="button" class="champ-rank-btn" data-rank="longestRun">上映最久</button>
+        <button type="button" class="champ-rank-btn" data-rank="weeklyStreak">蟬聯週冠</button>
+        <button type="button" class="champ-rank-btn" data-rank="crownWeeks">週冠次數</button>
+        <button type="button" class="champ-rank-btn" data-rank="rating">TMDB 評分</button>
+      </div>
+
+      <div class="champ-view-toggle">
+        <button type="button" class="champ-view-btn champ-view-btn--active" data-view="ranking">Top 10 排行</button>
+        <button type="button" class="champ-view-btn" data-view="genre">各片種冠軍</button>
+        <button type="button" class="champ-view-btn" data-view="country">各國別冠軍</button>
+      </div>
+    </div>
+
+    <div class="champ-year-nav" id="champ-years"></div>
+
+    <div class="champ-summary" id="champ-summary"></div>
+
+    <div class="bcr-stage bcr-stage--chart champ-panel" id="champ-panel">
+      <div class="month-chart-head champ-chart-head" id="champ-chart-head">
+        <span>排名</span>
+        <span>片名 / 類型</span>
+        <span id="champ-value-head">全年票房（萬元）</span>
+      </div>
+      <div class="champ-rank-list" id="champ-list"></div>
+    </div>
+
+    <footer class="bcr-footer">
+      爛片現形鏡 專題延伸｜
+      <a href="index.html">返回排行榜動畫</a>
+      ｜海報 TMDB｜票房為政府官方統計
+    </footer>
+  </div>
+
+  <div class="champ-modal" id="champ-modal" hidden>
+    <div class="champ-modal-backdrop" id="champ-modal-backdrop"></div>
+    <div class="champ-modal-panel" role="dialog" aria-modal="true" aria-labelledby="champ-modal-title">
+      <header class="champ-modal-header">
+        <div>
+          <h2 id="champ-modal-title">詳細排行</h2>
+          <p class="champ-modal-note" id="champ-modal-note"></p>
+        </div>
+        <button type="button" class="champ-modal-close" id="champ-modal-close" aria-label="關閉">×</button>
+      </header>
+      <div class="month-chart-head champ-chart-head champ-modal-head">
+        <span>排名</span>
+        <span>海報</span>
+        <span>片名 / 類型</span>
+        <span>全年票房（萬元）</span>
+      </div>
+      <div class="champ-rank-list champ-modal-list" id="champ-modal-list"></div>
+    </div>
+  </div>
+
+  <div class="champ-info-modal" id="champ-info-modal" hidden>
+    <div class="champ-info-modal-backdrop" id="champ-info-modal-backdrop"></div>
+    <div
+      class="champ-info-modal-panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="champ-info-modal-title"
+    >
+      <button type="button" class="champ-info-modal-close" id="champ-info-modal-close" aria-label="關閉">×</button>
+      <p class="champ-info-kicker">電影介紹</p>
+      <div class="champ-info-inner" id="champ-info-modal-body"></div>
+    </div>
+  </div>
+
+  <script src="filter-utils.js"></script>
+  <script src="rating-utils.js"></script>
+  <script src="champions.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "id": "silent_toxic",
+  "name": "無聲戀曲",
+  "total_comments": 0,
+  "article_count": 0,
+  "tag_counts": {},
+  "push_positive": 0,
+  "push_negative": 0,
+  "push_neutral": 0,
+  "sentiment": "mixed",
+  "sentiment_zh": "好壞參半",
+  "top_words": [],
+  "positive_words": [],
+  "negative_words": [],
+  "sample_comments": {
+    "positive": [],
+    "negative": []
+  },
+  "wordclouds": {},
+  "ai": {
+    "summary": "《無聲戀曲》評價兩極，有人讚「」，也有人嫌「」。見仁見智。",
+    "verdict": "見仁見智",
+    "sentiment": "mixed",
+    "source": "fallback"
+  }
+}

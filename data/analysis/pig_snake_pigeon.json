@@ -1,0 +1,328 @@
+{
+  "id": "pig_snake_pigeon",
+  "name": "周處除三害",
+  "total_comments": 6,
+  "sources": {
+    "ptt": 0,
+    "tmdb": 6
+  },
+  "article_count": 0,
+  "tag_counts": {
+    "推": 4,
+    "→": 1,
+    "噓": 1
+  },
+  "push_positive": 4,
+  "push_negative": 1,
+  "push_neutral": 1,
+  "sentiment": "positive",
+  "sentiment_zh": "偏正向",
+  "top_words": [
+    [
+      "and",
+      28
+    ],
+    [
+      "the",
+      24
+    ],
+    [
+      "to",
+      15
+    ],
+    [
+      "of",
+      15
+    ],
+    [
+      "is",
+      12
+    ],
+    [
+      "that",
+      9
+    ],
+    [
+      "it",
+      8
+    ],
+    [
+      "with",
+      5
+    ],
+    [
+      "in",
+      5
+    ],
+    [
+      "really",
+      5
+    ],
+    [
+      "horror",
+      5
+    ],
+    [
+      "some",
+      5
+    ],
+    [
+      "from",
+      4
+    ],
+    [
+      "Wilde",
+      4
+    ],
+    [
+      "well",
+      4
+    ],
+    [
+      "for",
+      4
+    ],
+    [
+      "film",
+      4
+    ],
+    [
+      "violence",
+      4
+    ],
+    [
+      "this",
+      4
+    ],
+    [
+      "Talk",
+      3
+    ],
+    [
+      "Me",
+      3
+    ],
+    [
+      "Sophie",
+      3
+    ],
+    [
+      "at",
+      3
+    ],
+    [
+      "which",
+      3
+    ],
+    [
+      "they",
+      3
+    ],
+    [
+      "are",
+      3
+    ],
+    [
+      "one",
+      3
+    ],
+    [
+      "on",
+      3
+    ],
+    [
+      "has",
+      3
+    ],
+    [
+      "most",
+      3
+    ]
+  ],
+  "positive_words": [
+    [
+      "and",
+      14
+    ],
+    [
+      "the",
+      12
+    ],
+    [
+      "to",
+      8
+    ],
+    [
+      "of",
+      8
+    ],
+    [
+      "is",
+      5
+    ],
+    [
+      "horror",
+      5
+    ],
+    [
+      "some",
+      5
+    ],
+    [
+      "Talk",
+      3
+    ],
+    [
+      "Me",
+      3
+    ],
+    [
+      "with",
+      3
+    ],
+    [
+      "this",
+      3
+    ],
+    [
+      "from",
+      2
+    ],
+    [
+      "Sophie",
+      2
+    ],
+    [
+      "Wilde",
+      2
+    ],
+    [
+      "at",
+      2
+    ],
+    [
+      "well",
+      2
+    ],
+    [
+      "review",
+      2
+    ],
+    [
+      "one",
+      2
+    ],
+    [
+      "in",
+      2
+    ],
+    [
+      "effects",
+      2
+    ]
+  ],
+  "negative_words": [
+    [
+      "and",
+      5
+    ],
+    [
+      "film",
+      3
+    ],
+    [
+      "was",
+      3
+    ],
+    [
+      "There",
+      2
+    ],
+    [
+      "is",
+      2
+    ],
+    [
+      "line",
+      2
+    ],
+    [
+      "violence",
+      2
+    ],
+    [
+      "like",
+      2
+    ],
+    [
+      "that",
+      2
+    ],
+    [
+      "This",
+      1
+    ],
+    [
+      "didn",
+      1
+    ],
+    [
+      "last",
+      1
+    ],
+    [
+      "5min",
+      1
+    ],
+    [
+      "usually",
+      1
+    ],
+    [
+      "give",
+      1
+    ],
+    [
+      "10min",
+      1
+    ],
+    [
+      "in",
+      1
+    ],
+    [
+      "with",
+      1
+    ],
+    [
+      "dirty",
+      1
+    ],
+    [
+      "jokes",
+      1
+    ]
+  ],
+  "sample_comments": {
+    "positive": [
+      "_Talk to Me_ is a brilliant and spine tingling evolution of _The Monkey’s Paw_ short story with an incredibly satisfying ending and a scene stealing performance from Sophie Wilde. Aaron McLisky’s cinematography featuring a ghoulish incline at just the right time makes _Talk to Me_, which is already a well-written nightmare and unique plunge into personal hell, visually and uniquely chilling.\r\n\r\n**Full review:** https://bit.ly/emotklat",
+      "FULL SPOILER-FREE REVIEW @ www.firstshowing.net/2023/review-australias-talk-to-me-is-the-best-horror-film-of-2023-so-far/\r\n\r\n\"Talk to Me lives up to the tremendous hype from festivals and initial reactions around the world. Without a doubt, one of the scariest horror films in recent years!\r\n\r\nImpressive practical effects, superb makeup, hypnotizing performances – Sophie Wilde clearly stands out the most – and impeccable execution of truly shocking, gory, unpredictable moments of violence. It doesn't have the most imaginative screenplay within the \"spirit-possessed characters\" subgenre and leaves some meaningful themes unexplored, but it's definitely one of this year's must-see horror flicks.\r\n\r\nDanny and Michael Philippou: remember their names!\"\r\n\r\nRating: A-",
+      "An astute, and at times, creepy analysis of grief and addiction and the lengths people will go to cope with their loss. Good acting, good script, good direction and some effective scares make this movie a must see for horror fans!",
+      "A really fun and fresh feeling horror genre flick, with some really solid performances. Highlight is the effects and some of the seriously brutal violence in it. When the little kid is smashing himself to pieces, outstanding, well done, hats off. Show this to some 12 year old you know."
+    ],
+    "negative": [
+      "This film didn't last 5min (I usually give a film 10min). There is a line and in film with dirty jokes and violence like chopping heads off there is a right and a wrong way of doing it. In the sci-fi fantasy genre I'm no stranger to violence I was watching Alien, Predator, Terminator and Nightmare on Elm Street since I was 5. But this was really disturbing, and crossed that line. There are things you just don't show. Not like that!"
+    ]
+  },
+  "wordclouds": {
+    "all": "wordclouds/pig_snake_pigeon_all.png",
+    "positive": "wordclouds/pig_snake_pigeon_positive.png",
+    "negative": "wordclouds/pig_snake_pigeon_negative.png"
+  },
+  "ai": {
+    "summary": "《周處除三害》口碑不錯，討論熱詞有「and、the、to」。整體偏推薦。",
+    "verdict": "推薦",
+    "sentiment": "positive",
+    "source": "fallback"
+  }
+}

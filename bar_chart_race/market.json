@@ -1,0 +1,3089 @@
+{
+  "valueSuffix": " 萬",
+  "subtitle": "全台院線週票房加總（官方銷售金額）",
+  "avgPriceNote": "平均票價 = 當期銷售金額 ÷ 售票數（元／張，含各票種加權）",
+  "coverage": {
+    "start": "2017/10/08",
+    "end": "2026/06/07",
+    "weeks": 391,
+    "months": 104
+  },
+  "weekly": [
+    {
+      "date": "2017/10/08",
+      "totalValue": 11511,
+      "totalTickets": 506026,
+      "avgPrice": 227
+    },
+    {
+      "date": "2017/10/15",
+      "totalValue": 11009,
+      "totalTickets": 493989,
+      "avgPrice": 223
+    },
+    {
+      "date": "2017/10/22",
+      "totalValue": 15321,
+      "totalTickets": 656084,
+      "avgPrice": 234
+    },
+    {
+      "date": "2017/10/29",
+      "totalValue": 9303,
+      "totalTickets": 410778,
+      "avgPrice": 226
+    },
+    {
+      "date": "2017/11/05",
+      "totalValue": 13931,
+      "totalTickets": 601813,
+      "avgPrice": 231
+    },
+    {
+      "date": "2017/11/12",
+      "totalValue": 8780,
+      "totalTickets": 384474,
+      "avgPrice": 228
+    },
+    {
+      "date": "2017/11/19",
+      "totalValue": 6367,
+      "totalTickets": 285872,
+      "avgPrice": 223
+    },
+    {
+      "date": "2017/11/26",
+      "totalValue": 10814,
+      "totalTickets": 465243,
+      "avgPrice": 232
+    },
+    {
+      "date": "2017/12/03",
+      "totalValue": 12810,
+      "totalTickets": 563578,
+      "avgPrice": 227
+    },
+    {
+      "date": "2017/12/10",
+      "totalValue": 11152,
+      "totalTickets": 494145,
+      "avgPrice": 226
+    },
+    {
+      "date": "2017/12/17",
+      "totalValue": 11294,
+      "totalTickets": 488336,
+      "avgPrice": 231
+    },
+    {
+      "date": "2017/12/24",
+      "totalValue": 9184,
+      "totalTickets": 392213,
+      "avgPrice": 234
+    },
+    {
+      "date": "2017/12/31",
+      "totalValue": 17027,
+      "totalTickets": 735921,
+      "avgPrice": 231
+    },
+    {
+      "date": "2018/01/07",
+      "totalValue": 26218,
+      "totalTickets": 1117132,
+      "avgPrice": 235
+    },
+    {
+      "date": "2018/01/14",
+      "totalValue": 15791,
+      "totalTickets": 678634,
+      "avgPrice": 233
+    },
+    {
+      "date": "2018/01/21",
+      "totalValue": 12916,
+      "totalTickets": 559242,
+      "avgPrice": 231
+    },
+    {
+      "date": "2018/01/28",
+      "totalValue": 16304,
+      "totalTickets": 735807,
+      "avgPrice": 222
+    },
+    {
+      "date": "2018/02/04",
+      "totalValue": 10558,
+      "totalTickets": 462472,
+      "avgPrice": 228
+    },
+    {
+      "date": "2018/02/11",
+      "totalValue": 13146,
+      "totalTickets": 571300,
+      "avgPrice": 230
+    },
+    {
+      "date": "2018/02/18",
+      "totalValue": 34032,
+      "totalTickets": 1457574,
+      "avgPrice": 233
+    },
+    {
+      "date": "2018/02/25",
+      "totalValue": 30166,
+      "totalTickets": 1302582,
+      "avgPrice": 232
+    },
+    {
+      "date": "2018/03/04",
+      "totalValue": 10611,
+      "totalTickets": 471029,
+      "avgPrice": 225
+    },
+    {
+      "date": "2018/03/11",
+      "totalValue": 10659,
+      "totalTickets": 466963,
+      "avgPrice": 228
+    },
+    {
+      "date": "2018/03/18",
+      "totalValue": 11925,
+      "totalTickets": 516982,
+      "avgPrice": 231
+    },
+    {
+      "date": "2018/03/25",
+      "totalValue": 6014,
+      "totalTickets": 269277,
+      "avgPrice": 223
+    },
+    {
+      "date": "2018/04/01",
+      "totalValue": 7467,
+      "totalTickets": 329395,
+      "avgPrice": 227
+    },
+    {
+      "date": "2018/04/08",
+      "totalValue": 22162,
+      "totalTickets": 894365,
+      "avgPrice": 248
+    },
+    {
+      "date": "2018/04/15",
+      "totalValue": 10941,
+      "totalTickets": 461352,
+      "avgPrice": 237
+    },
+    {
+      "date": "2018/04/22",
+      "totalValue": 11512,
+      "totalTickets": 490988,
+      "avgPrice": 234
+    },
+    {
+      "date": "2018/04/29",
+      "totalValue": 5795,
+      "totalTickets": 257093,
+      "avgPrice": 225
+    },
+    {
+      "date": "2018/05/06",
+      "totalValue": 24913,
+      "totalTickets": 1027215,
+      "avgPrice": 243
+    },
+    {
+      "date": "2018/05/13",
+      "totalValue": 10523,
+      "totalTickets": 439036,
+      "avgPrice": 240
+    },
+    {
+      "date": "2018/05/20",
+      "totalValue": 7137,
+      "totalTickets": 313890,
+      "avgPrice": 227
+    },
+    {
+      "date": "2018/05/27",
+      "totalValue": 11460,
+      "totalTickets": 501527,
+      "avgPrice": 229
+    },
+    {
+      "date": "2018/06/03",
+      "totalValue": 7468,
+      "totalTickets": 329698,
+      "avgPrice": 227
+    },
+    {
+      "date": "2018/06/10",
+      "totalValue": 3868,
+      "totalTickets": 177517,
+      "avgPrice": 218
+    },
+    {
+      "date": "2018/06/17",
+      "totalValue": 20326,
+      "totalTickets": 840916,
+      "avgPrice": 242
+    },
+    {
+      "date": "2018/06/24",
+      "totalValue": 19583,
+      "totalTickets": 830971,
+      "avgPrice": 236
+    },
+    {
+      "date": "2018/07/01",
+      "totalValue": 10728,
+      "totalTickets": 466321,
+      "avgPrice": 230
+    },
+    {
+      "date": "2018/07/08",
+      "totalValue": 12427,
+      "totalTickets": 552604,
+      "avgPrice": 225
+    },
+    {
+      "date": "2018/07/15",
+      "totalValue": 18557,
+      "totalTickets": 812332,
+      "avgPrice": 228
+    },
+    {
+      "date": "2018/07/22",
+      "totalValue": 17145,
+      "totalTickets": 745752,
+      "avgPrice": 230
+    },
+    {
+      "date": "2018/07/29",
+      "totalValue": 10317,
+      "totalTickets": 460376,
+      "avgPrice": 224
+    },
+    {
+      "date": "2018/08/05",
+      "totalValue": 19284,
+      "totalTickets": 827136,
+      "avgPrice": 233
+    },
+    {
+      "date": "2018/08/12",
+      "totalValue": 10875,
+      "totalTickets": 482256,
+      "avgPrice": 226
+    },
+    {
+      "date": "2018/08/19",
+      "totalValue": 27710,
+      "totalTickets": 1184098,
+      "avgPrice": 234
+    },
+    {
+      "date": "2018/08/26",
+      "totalValue": 16485,
+      "totalTickets": 712314,
+      "avgPrice": 231
+    },
+    {
+      "date": "2018/09/02",
+      "totalValue": 15510,
+      "totalTickets": 676212,
+      "avgPrice": 229
+    },
+    {
+      "date": "2018/09/09",
+      "totalValue": 9598,
+      "totalTickets": 426460,
+      "avgPrice": 225
+    },
+    {
+      "date": "2018/09/16",
+      "totalValue": 8665,
+      "totalTickets": 381813,
+      "avgPrice": 227
+    },
+    {
+      "date": "2018/09/23",
+      "totalValue": 6288,
+      "totalTickets": 278256,
+      "avgPrice": 226
+    },
+    {
+      "date": "2018/09/30",
+      "totalValue": 12079,
+      "totalTickets": 530767,
+      "avgPrice": 228
+    },
+    {
+      "date": "2018/10/07",
+      "totalValue": 5712,
+      "totalTickets": 257381,
+      "avgPrice": 222
+    },
+    {
+      "date": "2018/10/14",
+      "totalValue": 15287,
+      "totalTickets": 670461,
+      "avgPrice": 228
+    },
+    {
+      "date": "2018/10/21",
+      "totalValue": 11141,
+      "totalTickets": 484365,
+      "avgPrice": 230
+    },
+    {
+      "date": "2018/10/28",
+      "totalValue": 8837,
+      "totalTickets": 385896,
+      "avgPrice": 229
+    },
+    {
+      "date": "2018/11/04",
+      "totalValue": 8419,
+      "totalTickets": 370814,
+      "avgPrice": 227
+    },
+    {
+      "date": "2018/11/11",
+      "totalValue": 6480,
+      "totalTickets": 286994,
+      "avgPrice": 226
+    },
+    {
+      "date": "2018/11/18",
+      "totalValue": 6993,
+      "totalTickets": 310767,
+      "avgPrice": 225
+    },
+    {
+      "date": "2018/11/25",
+      "totalValue": 12476,
+      "totalTickets": 532741,
+      "avgPrice": 234
+    },
+    {
+      "date": "2018/12/02",
+      "totalValue": 12920,
+      "totalTickets": 565670,
+      "avgPrice": 228
+    },
+    {
+      "date": "2018/12/09",
+      "totalValue": 18754,
+      "totalTickets": 819365,
+      "avgPrice": 229
+    },
+    {
+      "date": "2018/12/16",
+      "totalValue": 11808,
+      "totalTickets": 518209,
+      "avgPrice": 228
+    },
+    {
+      "date": "2018/12/23",
+      "totalValue": 19342,
+      "totalTickets": 816872,
+      "avgPrice": 237
+    },
+    {
+      "date": "2018/12/30",
+      "totalValue": 13578,
+      "totalTickets": 583535,
+      "avgPrice": 233
+    },
+    {
+      "date": "2019/01/06",
+      "totalValue": 20314,
+      "totalTickets": 865347,
+      "avgPrice": 235
+    },
+    {
+      "date": "2019/01/13",
+      "totalValue": 6862,
+      "totalTickets": 297808,
+      "avgPrice": 230
+    },
+    {
+      "date": "2019/01/20",
+      "totalValue": 6621,
+      "totalTickets": 290016,
+      "avgPrice": 228
+    },
+    {
+      "date": "2019/01/27",
+      "totalValue": 7165,
+      "totalTickets": 315278,
+      "avgPrice": 227
+    },
+    {
+      "date": "2019/02/03",
+      "totalValue": 6094,
+      "totalTickets": 271734,
+      "avgPrice": 224
+    },
+    {
+      "date": "2019/02/10",
+      "totalValue": 15435,
+      "totalTickets": 675084,
+      "avgPrice": 229
+    },
+    {
+      "date": "2019/02/17",
+      "totalValue": 11571,
+      "totalTickets": 486545,
+      "avgPrice": 238
+    },
+    {
+      "date": "2019/02/24",
+      "totalValue": 7840,
+      "totalTickets": 335357,
+      "avgPrice": 234
+    },
+    {
+      "date": "2019/03/03",
+      "totalValue": 13609,
+      "totalTickets": 574330,
+      "avgPrice": 237
+    },
+    {
+      "date": "2019/03/10",
+      "totalValue": 5752,
+      "totalTickets": 254369,
+      "avgPrice": 226
+    },
+    {
+      "date": "2019/03/17",
+      "totalValue": 16395,
+      "totalTickets": 704858,
+      "avgPrice": 233
+    },
+    {
+      "date": "2019/03/24",
+      "totalValue": 8465,
+      "totalTickets": 368462,
+      "avgPrice": 230
+    },
+    {
+      "date": "2019/03/31",
+      "totalValue": 7818,
+      "totalTickets": 345956,
+      "avgPrice": 226
+    },
+    {
+      "date": "2019/04/07",
+      "totalValue": 18903,
+      "totalTickets": 821508,
+      "avgPrice": 230
+    },
+    {
+      "date": "2019/04/14",
+      "totalValue": 7374,
+      "totalTickets": 323549,
+      "avgPrice": 228
+    },
+    {
+      "date": "2019/04/21",
+      "totalValue": 7476,
+      "totalTickets": 329755,
+      "avgPrice": 227
+    },
+    {
+      "date": "2019/04/28",
+      "totalValue": 3401,
+      "totalTickets": 155272,
+      "avgPrice": 219
+    },
+    {
+      "date": "2019/05/05",
+      "totalValue": 32134,
+      "totalTickets": 1254676,
+      "avgPrice": 256
+    },
+    {
+      "date": "2019/05/12",
+      "totalValue": 12331,
+      "totalTickets": 483277,
+      "avgPrice": 255
+    },
+    {
+      "date": "2019/05/19",
+      "totalValue": 14795,
+      "totalTickets": 616091,
+      "avgPrice": 240
+    },
+    {
+      "date": "2019/05/26",
+      "totalValue": 11557,
+      "totalTickets": 499516,
+      "avgPrice": 231
+    },
+    {
+      "date": "2019/06/02",
+      "totalValue": 13181,
+      "totalTickets": 554969,
+      "avgPrice": 238
+    },
+    {
+      "date": "2019/06/09",
+      "totalValue": 19387,
+      "totalTickets": 813895,
+      "avgPrice": 238
+    },
+    {
+      "date": "2019/06/16",
+      "totalValue": 12445,
+      "totalTickets": 536347,
+      "avgPrice": 232
+    },
+    {
+      "date": "2019/06/23",
+      "totalValue": 10142,
+      "totalTickets": 439798,
+      "avgPrice": 231
+    },
+    {
+      "date": "2019/06/30",
+      "totalValue": 18871,
+      "totalTickets": 813164,
+      "avgPrice": 232
+    },
+    {
+      "date": "2019/07/07",
+      "totalValue": 14677,
+      "totalTickets": 637829,
+      "avgPrice": 230
+    },
+    {
+      "date": "2019/07/14",
+      "totalValue": 28220,
+      "totalTickets": 1212886,
+      "avgPrice": 233
+    },
+    {
+      "date": "2019/07/21",
+      "totalValue": 15705,
+      "totalTickets": 683543,
+      "avgPrice": 230
+    },
+    {
+      "date": "2019/07/28",
+      "totalValue": 18831,
+      "totalTickets": 809271,
+      "avgPrice": 233
+    },
+    {
+      "date": "2019/08/04",
+      "totalValue": 2386,
+      "totalTickets": 102874,
+      "avgPrice": 232
+    },
+    {
+      "date": "2019/08/11",
+      "totalValue": 1713,
+      "totalTickets": 74717,
+      "avgPrice": 229
+    },
+    {
+      "date": "2019/08/18",
+      "totalValue": 936,
+      "totalTickets": 41221,
+      "avgPrice": 227
+    },
+    {
+      "date": "2019/08/25",
+      "totalValue": 9519,
+      "totalTickets": 419025,
+      "avgPrice": 227
+    },
+    {
+      "date": "2019/09/01",
+      "totalValue": 12019,
+      "totalTickets": 521996,
+      "avgPrice": 230
+    },
+    {
+      "date": "2019/09/08",
+      "totalValue": 8214,
+      "totalTickets": 361488,
+      "avgPrice": 227
+    },
+    {
+      "date": "2019/09/15",
+      "totalValue": 9061,
+      "totalTickets": 390107,
+      "avgPrice": 232
+    },
+    {
+      "date": "2019/09/22",
+      "totalValue": 9207,
+      "totalTickets": 400172,
+      "avgPrice": 230
+    },
+    {
+      "date": "2019/09/29",
+      "totalValue": 15970,
+      "totalTickets": 684572,
+      "avgPrice": 233
+    },
+    {
+      "date": "2019/10/06",
+      "totalValue": 9306,
+      "totalTickets": 401307,
+      "avgPrice": 232
+    },
+    {
+      "date": "2019/10/13",
+      "totalValue": 20614,
+      "totalTickets": 873193,
+      "avgPrice": 236
+    },
+    {
+      "date": "2019/10/20",
+      "totalValue": 10295,
+      "totalTickets": 447175,
+      "avgPrice": 230
+    },
+    {
+      "date": "2019/10/27",
+      "totalValue": 8777,
+      "totalTickets": 385717,
+      "avgPrice": 228
+    },
+    {
+      "date": "2019/11/03",
+      "totalValue": 9974,
+      "totalTickets": 427475,
+      "avgPrice": 233
+    },
+    {
+      "date": "2019/11/10",
+      "totalValue": 6542,
+      "totalTickets": 286918,
+      "avgPrice": 228
+    },
+    {
+      "date": "2019/11/17",
+      "totalValue": 10187,
+      "totalTickets": 445213,
+      "avgPrice": 229
+    },
+    {
+      "date": "2019/11/24",
+      "totalValue": 6855,
+      "totalTickets": 301132,
+      "avgPrice": 228
+    },
+    {
+      "date": "2019/12/01",
+      "totalValue": 15195,
+      "totalTickets": 652873,
+      "avgPrice": 233
+    },
+    {
+      "date": "2019/12/08",
+      "totalValue": 11256,
+      "totalTickets": 485289,
+      "avgPrice": 232
+    },
+    {
+      "date": "2019/12/15",
+      "totalValue": 13866,
+      "totalTickets": 591700,
+      "avgPrice": 234
+    },
+    {
+      "date": "2019/12/22",
+      "totalValue": 7869,
+      "totalTickets": 341470,
+      "avgPrice": 230
+    },
+    {
+      "date": "2019/12/29",
+      "totalValue": 12254,
+      "totalTickets": 528361,
+      "avgPrice": 232
+    },
+    {
+      "date": "2020/01/05",
+      "totalValue": 15401,
+      "totalTickets": 665551,
+      "avgPrice": 231
+    },
+    {
+      "date": "2020/01/12",
+      "totalValue": 7142,
+      "totalTickets": 311414,
+      "avgPrice": 229
+    },
+    {
+      "date": "2020/01/19",
+      "totalValue": 5910,
+      "totalTickets": 258232,
+      "avgPrice": 229
+    },
+    {
+      "date": "2020/01/26",
+      "totalValue": 7895,
+      "totalTickets": 337309,
+      "avgPrice": 234
+    },
+    {
+      "date": "2020/02/02",
+      "totalValue": 15148,
+      "totalTickets": 650470,
+      "avgPrice": 233
+    },
+    {
+      "date": "2020/02/09",
+      "totalValue": 6710,
+      "totalTickets": 289741,
+      "avgPrice": 232
+    },
+    {
+      "date": "2020/02/16",
+      "totalValue": 540,
+      "totalTickets": 23293,
+      "avgPrice": 232
+    },
+    {
+      "date": "2020/02/23",
+      "totalValue": 6130,
+      "totalTickets": 264085,
+      "avgPrice": 232
+    },
+    {
+      "date": "2020/03/01",
+      "totalValue": 4139,
+      "totalTickets": 182958,
+      "avgPrice": 226
+    },
+    {
+      "date": "2020/03/08",
+      "totalValue": 5988,
+      "totalTickets": 258713,
+      "avgPrice": 231
+    },
+    {
+      "date": "2020/03/15",
+      "totalValue": 3740,
+      "totalTickets": 164222,
+      "avgPrice": 228
+    },
+    {
+      "date": "2020/03/22",
+      "totalValue": 4020,
+      "totalTickets": 174274,
+      "avgPrice": 231
+    },
+    {
+      "date": "2020/03/29",
+      "totalValue": 1829,
+      "totalTickets": 80498,
+      "avgPrice": 227
+    },
+    {
+      "date": "2020/04/05",
+      "totalValue": 1541,
+      "totalTickets": 67466,
+      "avgPrice": 228
+    },
+    {
+      "date": "2020/04/12",
+      "totalValue": 1357,
+      "totalTickets": 60102,
+      "avgPrice": 226
+    },
+    {
+      "date": "2020/04/19",
+      "totalValue": 1331,
+      "totalTickets": 58109,
+      "avgPrice": 229
+    },
+    {
+      "date": "2020/04/26",
+      "totalValue": 1030,
+      "totalTickets": 45223,
+      "avgPrice": 228
+    },
+    {
+      "date": "2020/05/03",
+      "totalValue": 1533,
+      "totalTickets": 64869,
+      "avgPrice": 236
+    },
+    {
+      "date": "2020/05/10",
+      "totalValue": 1843,
+      "totalTickets": 78868,
+      "avgPrice": 234
+    },
+    {
+      "date": "2020/05/17",
+      "totalValue": 1820,
+      "totalTickets": 76814,
+      "avgPrice": 237
+    },
+    {
+      "date": "2020/05/24",
+      "totalValue": 2024,
+      "totalTickets": 85639,
+      "avgPrice": 236
+    },
+    {
+      "date": "2020/05/31",
+      "totalValue": 2733,
+      "totalTickets": 117690,
+      "avgPrice": 232
+    },
+    {
+      "date": "2020/06/07",
+      "totalValue": 2430,
+      "totalTickets": 102785,
+      "avgPrice": 236
+    },
+    {
+      "date": "2020/06/21",
+      "totalValue": 2062,
+      "totalTickets": 89055,
+      "avgPrice": 232
+    },
+    {
+      "date": "2020/06/28",
+      "totalValue": 2662,
+      "totalTickets": 113965,
+      "avgPrice": 234
+    },
+    {
+      "date": "2020/07/12",
+      "totalValue": 4806,
+      "totalTickets": 205381,
+      "avgPrice": 234
+    },
+    {
+      "date": "2020/07/26",
+      "totalValue": 16038,
+      "totalTickets": 668575,
+      "avgPrice": 240
+    },
+    {
+      "date": "2020/08/02",
+      "totalValue": 9698,
+      "totalTickets": 411488,
+      "avgPrice": 236
+    },
+    {
+      "date": "2020/08/16",
+      "totalValue": 6289,
+      "totalTickets": 273290,
+      "avgPrice": 230
+    },
+    {
+      "date": "2020/08/23",
+      "totalValue": 10167,
+      "totalTickets": 431564,
+      "avgPrice": 236
+    },
+    {
+      "date": "2020/08/30",
+      "totalValue": 8413,
+      "totalTickets": 363548,
+      "avgPrice": 231
+    },
+    {
+      "date": "2020/09/06",
+      "totalValue": 16095,
+      "totalTickets": 664960,
+      "avgPrice": 242
+    },
+    {
+      "date": "2020/09/13",
+      "totalValue": 13223,
+      "totalTickets": 548468,
+      "avgPrice": 241
+    },
+    {
+      "date": "2020/09/20",
+      "totalValue": 8790,
+      "totalTickets": 365602,
+      "avgPrice": 240
+    },
+    {
+      "date": "2020/10/04",
+      "totalValue": 6326,
+      "totalTickets": 269358,
+      "avgPrice": 235
+    },
+    {
+      "date": "2020/10/18",
+      "totalValue": 6931,
+      "totalTickets": 290834,
+      "avgPrice": 238
+    },
+    {
+      "date": "2020/10/25",
+      "totalValue": 5505,
+      "totalTickets": 233573,
+      "avgPrice": 236
+    },
+    {
+      "date": "2020/11/01",
+      "totalValue": 4319,
+      "totalTickets": 184132,
+      "avgPrice": 235
+    },
+    {
+      "date": "2020/11/08",
+      "totalValue": 18350,
+      "totalTickets": 768794,
+      "avgPrice": 239
+    },
+    {
+      "date": "2020/11/15",
+      "totalValue": 16800,
+      "totalTickets": 704600,
+      "avgPrice": 238
+    },
+    {
+      "date": "2020/11/22",
+      "totalValue": 12811,
+      "totalTickets": 538740,
+      "avgPrice": 238
+    },
+    {
+      "date": "2020/11/29",
+      "totalValue": 14271,
+      "totalTickets": 606155,
+      "avgPrice": 235
+    },
+    {
+      "date": "2020/12/06",
+      "totalValue": 10535,
+      "totalTickets": 454473,
+      "avgPrice": 232
+    },
+    {
+      "date": "2020/12/13",
+      "totalValue": 10024,
+      "totalTickets": 428472,
+      "avgPrice": 234
+    },
+    {
+      "date": "2020/12/20",
+      "totalValue": 5408,
+      "totalTickets": 233681,
+      "avgPrice": 231
+    },
+    {
+      "date": "2020/12/27",
+      "totalValue": 11763,
+      "totalTickets": 492211,
+      "avgPrice": 239
+    },
+    {
+      "date": "2020/01/03",
+      "totalValue": 12264,
+      "totalTickets": 493994,
+      "avgPrice": 248
+    },
+    {
+      "date": "2021/01/10",
+      "totalValue": 8760,
+      "totalTickets": 359281,
+      "avgPrice": 244
+    },
+    {
+      "date": "2021/01/17",
+      "totalValue": 6550,
+      "totalTickets": 270717,
+      "avgPrice": 242
+    },
+    {
+      "date": "2021/01/24",
+      "totalValue": 6775,
+      "totalTickets": 283992,
+      "avgPrice": 239
+    },
+    {
+      "date": "2021/01/31",
+      "totalValue": 6039,
+      "totalTickets": 255134,
+      "avgPrice": 237
+    },
+    {
+      "date": "2021/02/07",
+      "totalValue": 5547,
+      "totalTickets": 234313,
+      "avgPrice": 237
+    },
+    {
+      "date": "2021/02/14",
+      "totalValue": 9711,
+      "totalTickets": 406561,
+      "avgPrice": 239
+    },
+    {
+      "date": "2021/02/21",
+      "totalValue": 14079,
+      "totalTickets": 590100,
+      "avgPrice": 239
+    },
+    {
+      "date": "2021/02/28",
+      "totalValue": 5863,
+      "totalTickets": 248546,
+      "avgPrice": 236
+    },
+    {
+      "date": "2021/03/07",
+      "totalValue": 5885,
+      "totalTickets": 248529,
+      "avgPrice": 237
+    },
+    {
+      "date": "2021/03/14",
+      "totalValue": 5100,
+      "totalTickets": 215888,
+      "avgPrice": 236
+    },
+    {
+      "date": "2021/03/28",
+      "totalValue": 2119,
+      "totalTickets": 93390,
+      "avgPrice": 227
+    },
+    {
+      "date": "2021/04/04",
+      "totalValue": 14320,
+      "totalTickets": 569830,
+      "avgPrice": 251
+    },
+    {
+      "date": "2021/04/11",
+      "totalValue": 19389,
+      "totalTickets": 804602,
+      "avgPrice": 241
+    },
+    {
+      "date": "2021/04/18",
+      "totalValue": 16129,
+      "totalTickets": 674907,
+      "avgPrice": 239
+    },
+    {
+      "date": "2021/04/25",
+      "totalValue": 14995,
+      "totalTickets": 631191,
+      "avgPrice": 238
+    },
+    {
+      "date": "2021/05/02",
+      "totalValue": 11079,
+      "totalTickets": 470272,
+      "avgPrice": 236
+    },
+    {
+      "date": "2021/05/09",
+      "totalValue": 9055,
+      "totalTickets": 376467,
+      "avgPrice": 241
+    },
+    {
+      "date": "2021/05/16",
+      "totalValue": 2977,
+      "totalTickets": 124761,
+      "avgPrice": 239
+    },
+    {
+      "date": "2021/05/20",
+      "totalValue": 50,
+      "totalTickets": 2227,
+      "avgPrice": 223
+    },
+    {
+      "date": "2021/07/25",
+      "totalValue": 3240,
+      "totalTickets": 127437,
+      "avgPrice": 254
+    },
+    {
+      "date": "2021/08/01",
+      "totalValue": 1403,
+      "totalTickets": 55913,
+      "avgPrice": 251
+    },
+    {
+      "date": "2021/08/08",
+      "totalValue": 1757,
+      "totalTickets": 70764,
+      "avgPrice": 248
+    },
+    {
+      "date": "2021/08/15",
+      "totalValue": 3495,
+      "totalTickets": 139427,
+      "avgPrice": 251
+    },
+    {
+      "date": "2021/08/22",
+      "totalValue": 7404,
+      "totalTickets": 292368,
+      "avgPrice": 253
+    },
+    {
+      "date": "2021/08/29",
+      "totalValue": 6028,
+      "totalTickets": 239574,
+      "avgPrice": 252
+    },
+    {
+      "date": "2021/09/05",
+      "totalValue": 5760,
+      "totalTickets": 228219,
+      "avgPrice": 252
+    },
+    {
+      "date": "2021/09/12",
+      "totalValue": 6953,
+      "totalTickets": 273953,
+      "avgPrice": 254
+    },
+    {
+      "date": "2021/09/19",
+      "totalValue": 2242,
+      "totalTickets": 89952,
+      "avgPrice": 249
+    },
+    {
+      "date": "2021/09/26",
+      "totalValue": 10259,
+      "totalTickets": 388280,
+      "avgPrice": 264
+    },
+    {
+      "date": "2021/10/24",
+      "totalValue": 7486,
+      "totalTickets": 298276,
+      "avgPrice": 251
+    },
+    {
+      "date": "2021/11/07",
+      "totalValue": 3921,
+      "totalTickets": 165786,
+      "avgPrice": 237
+    },
+    {
+      "date": "2021/11/21",
+      "totalValue": 7823,
+      "totalTickets": 313529,
+      "avgPrice": 250
+    },
+    {
+      "date": "2021/11/28",
+      "totalValue": 4627,
+      "totalTickets": 181459,
+      "avgPrice": 255
+    },
+    {
+      "date": "2021/12/05",
+      "totalValue": 12747,
+      "totalTickets": 522340,
+      "avgPrice": 244
+    },
+    {
+      "date": "2021/12/12",
+      "totalValue": 9773,
+      "totalTickets": 397190,
+      "avgPrice": 246
+    },
+    {
+      "date": "2021/12/19",
+      "totalValue": 5864,
+      "totalTickets": 245702,
+      "avgPrice": 239
+    },
+    {
+      "date": "2021/12/26",
+      "totalValue": 17314,
+      "totalTickets": 703258,
+      "avgPrice": 246
+    },
+    {
+      "date": "2022/01/09",
+      "totalValue": 8529,
+      "totalTickets": 346050,
+      "avgPrice": 246
+    },
+    {
+      "date": "2022/01/16",
+      "totalValue": 5412,
+      "totalTickets": 220583,
+      "avgPrice": 245
+    },
+    {
+      "date": "2022/01/23",
+      "totalValue": 3861,
+      "totalTickets": 156939,
+      "avgPrice": 246
+    },
+    {
+      "date": "2022/01/30",
+      "totalValue": 2822,
+      "totalTickets": 116671,
+      "avgPrice": 242
+    },
+    {
+      "date": "2022/02/13",
+      "totalValue": 5601,
+      "totalTickets": 232836,
+      "avgPrice": 241
+    },
+    {
+      "date": "2022/02/20",
+      "totalValue": 4384,
+      "totalTickets": 179671,
+      "avgPrice": 244
+    },
+    {
+      "date": "2022/02/27",
+      "totalValue": 4964,
+      "totalTickets": 203350,
+      "avgPrice": 244
+    },
+    {
+      "date": "2022/03/06",
+      "totalValue": 11587,
+      "totalTickets": 465058,
+      "avgPrice": 249
+    },
+    {
+      "date": "2022/03/13",
+      "totalValue": 9587,
+      "totalTickets": 387925,
+      "avgPrice": 247
+    },
+    {
+      "date": "2022/03/20",
+      "totalValue": 5803,
+      "totalTickets": 225618,
+      "avgPrice": 257
+    },
+    {
+      "date": "2022/03/27",
+      "totalValue": 10698,
+      "totalTickets": 440790,
+      "avgPrice": 243
+    },
+    {
+      "date": "2022/04/10",
+      "totalValue": 9299,
+      "totalTickets": 386351,
+      "avgPrice": 241
+    },
+    {
+      "date": "2022/04/24",
+      "totalValue": 5279,
+      "totalTickets": 211002,
+      "avgPrice": 250
+    },
+    {
+      "date": "2022/05/15",
+      "totalValue": 7531,
+      "totalTickets": 290156,
+      "avgPrice": 260
+    },
+    {
+      "date": "2022/05/22",
+      "totalValue": 4388,
+      "totalTickets": 171133,
+      "avgPrice": 256
+    },
+    {
+      "date": "2022/05/29",
+      "totalValue": 10962,
+      "totalTickets": 407430,
+      "avgPrice": 269
+    },
+    {
+      "date": "2022/06/05",
+      "totalValue": 16623,
+      "totalTickets": 607888,
+      "avgPrice": 273
+    },
+    {
+      "date": "2022/06/12",
+      "totalValue": 11549,
+      "totalTickets": 446547,
+      "avgPrice": 259
+    },
+    {
+      "date": "2022/06/19",
+      "totalValue": 17968,
+      "totalTickets": 686098,
+      "avgPrice": 262
+    },
+    {
+      "date": "2022/06/26",
+      "totalValue": 14839,
+      "totalTickets": 555479,
+      "avgPrice": 267
+    },
+    {
+      "date": "2022/07/03",
+      "totalValue": 12814,
+      "totalTickets": 481332,
+      "avgPrice": 266
+    },
+    {
+      "date": "2022/07/10",
+      "totalValue": 10501,
+      "totalTickets": 418978,
+      "avgPrice": 251
+    },
+    {
+      "date": "2022/07/17",
+      "totalValue": 13519,
+      "totalTickets": 532433,
+      "avgPrice": 254
+    },
+    {
+      "date": "2022/07/24",
+      "totalValue": 8829,
+      "totalTickets": 340400,
+      "avgPrice": 259
+    },
+    {
+      "date": "2022/07/31",
+      "totalValue": 10259,
+      "totalTickets": 399607,
+      "avgPrice": 257
+    },
+    {
+      "date": "2022/08/07",
+      "totalValue": 6679,
+      "totalTickets": 268401,
+      "avgPrice": 249
+    },
+    {
+      "date": "2022/08/14",
+      "totalValue": 8545,
+      "totalTickets": 341781,
+      "avgPrice": 250
+    },
+    {
+      "date": "2022/08/21",
+      "totalValue": 13924,
+      "totalTickets": 542040,
+      "avgPrice": 257
+    },
+    {
+      "date": "2022/08/28",
+      "totalValue": 11577,
+      "totalTickets": 447914,
+      "avgPrice": 258
+    },
+    {
+      "date": "2022/09/04",
+      "totalValue": 6801,
+      "totalTickets": 269060,
+      "avgPrice": 253
+    },
+    {
+      "date": "2022/09/11",
+      "totalValue": 5231,
+      "totalTickets": 207013,
+      "avgPrice": 253
+    },
+    {
+      "date": "2022/09/18",
+      "totalValue": 4419,
+      "totalTickets": 177279,
+      "avgPrice": 249
+    },
+    {
+      "date": "2022/09/25",
+      "totalValue": 4056,
+      "totalTickets": 163221,
+      "avgPrice": 248
+    },
+    {
+      "date": "2022/10/02",
+      "totalValue": 3149,
+      "totalTickets": 121912,
+      "avgPrice": 258
+    },
+    {
+      "date": "2022/10/30",
+      "totalValue": 6279,
+      "totalTickets": 249077,
+      "avgPrice": 252
+    },
+    {
+      "date": "2022/11/13",
+      "totalValue": 4275,
+      "totalTickets": 189609,
+      "avgPrice": 225
+    },
+    {
+      "date": "2022/11/20",
+      "totalValue": 10034,
+      "totalTickets": 390073,
+      "avgPrice": 257
+    },
+    {
+      "date": "2022/11/27",
+      "totalValue": 5803,
+      "totalTickets": 223928,
+      "avgPrice": 259
+    },
+    {
+      "date": "2022/12/11",
+      "totalValue": 4954,
+      "totalTickets": 195300,
+      "avgPrice": 254
+    },
+    {
+      "date": "2022/12/18",
+      "totalValue": 2643,
+      "totalTickets": 107371,
+      "avgPrice": 246
+    },
+    {
+      "date": "2022/12/25",
+      "totalValue": 18364,
+      "totalTickets": 577583,
+      "avgPrice": 318
+    },
+    {
+      "date": "2023/01/01",
+      "totalValue": 15799,
+      "totalTickets": 493355,
+      "avgPrice": 320
+    },
+    {
+      "date": "2023/01/08",
+      "totalValue": 13642,
+      "totalTickets": 458969,
+      "avgPrice": 297
+    },
+    {
+      "date": "2023/01/22",
+      "totalValue": 19200,
+      "totalTickets": 724643,
+      "avgPrice": 265
+    },
+    {
+      "date": "2023/01/29",
+      "totalValue": 31548,
+      "totalTickets": 1181706,
+      "avgPrice": 267
+    },
+    {
+      "date": "2023/02/05",
+      "totalValue": 12097,
+      "totalTickets": 463057,
+      "avgPrice": 261
+    },
+    {
+      "date": "2023/03/05",
+      "totalValue": 21298,
+      "totalTickets": 833621,
+      "avgPrice": 255
+    },
+    {
+      "date": "2023/03/19",
+      "totalValue": 7766,
+      "totalTickets": 309681,
+      "avgPrice": 251
+    },
+    {
+      "date": "2023/04/02",
+      "totalValue": 9915,
+      "totalTickets": 386877,
+      "avgPrice": 256
+    },
+    {
+      "date": "2023/04/09",
+      "totalValue": 16414,
+      "totalTickets": 642753,
+      "avgPrice": 255
+    },
+    {
+      "date": "2023/04/23",
+      "totalValue": 10016,
+      "totalTickets": 393796,
+      "avgPrice": 254
+    },
+    {
+      "date": "2023/04/30",
+      "totalValue": 7572,
+      "totalTickets": 301948,
+      "avgPrice": 251
+    },
+    {
+      "date": "2023/05/14",
+      "totalValue": 7270,
+      "totalTickets": 282445,
+      "avgPrice": 257
+    },
+    {
+      "date": "2023/05/21",
+      "totalValue": 5285,
+      "totalTickets": 212836,
+      "avgPrice": 248
+    },
+    {
+      "date": "2023/05/28",
+      "totalValue": 13517,
+      "totalTickets": 518085,
+      "avgPrice": 261
+    },
+    {
+      "date": "2023/06/04",
+      "totalValue": 9641,
+      "totalTickets": 373270,
+      "avgPrice": 258
+    },
+    {
+      "date": "2023/06/11",
+      "totalValue": 6479,
+      "totalTickets": 259638,
+      "avgPrice": 250
+    },
+    {
+      "date": "2023/06/18",
+      "totalValue": 7629,
+      "totalTickets": 301967,
+      "avgPrice": 253
+    },
+    {
+      "date": "2023/07/02",
+      "totalValue": 9074,
+      "totalTickets": 356970,
+      "avgPrice": 254
+    },
+    {
+      "date": "2023/07/09",
+      "totalValue": 8745,
+      "totalTickets": 344404,
+      "avgPrice": 254
+    },
+    {
+      "date": "2023/07/16",
+      "totalValue": 25747,
+      "totalTickets": 954763,
+      "avgPrice": 270
+    },
+    {
+      "date": "2023/07/23",
+      "totalValue": 17213,
+      "totalTickets": 644101,
+      "avgPrice": 267
+    },
+    {
+      "date": "2023/07/30",
+      "totalValue": 21866,
+      "totalTickets": 796824,
+      "avgPrice": 274
+    },
+    {
+      "date": "2023/08/13",
+      "totalValue": 17363,
+      "totalTickets": 652807,
+      "avgPrice": 266
+    },
+    {
+      "date": "2023/08/20",
+      "totalValue": 10257,
+      "totalTickets": 395037,
+      "avgPrice": 260
+    },
+    {
+      "date": "2023/08/27",
+      "totalValue": 12363,
+      "totalTickets": 474723,
+      "avgPrice": 260
+    },
+    {
+      "date": "2023/09/03",
+      "totalValue": 10195,
+      "totalTickets": 391662,
+      "avgPrice": 260
+    },
+    {
+      "date": "2023/09/10",
+      "totalValue": 7572,
+      "totalTickets": 292124,
+      "avgPrice": 259
+    },
+    {
+      "date": "2023/10/08",
+      "totalValue": 2549,
+      "totalTickets": 99655,
+      "avgPrice": 256
+    },
+    {
+      "date": "2023/10/15",
+      "totalValue": 13126,
+      "totalTickets": 511934,
+      "avgPrice": 256
+    },
+    {
+      "date": "2023/10/22",
+      "totalValue": 6945,
+      "totalTickets": 275731,
+      "avgPrice": 252
+    },
+    {
+      "date": "2023/10/29",
+      "totalValue": 5658,
+      "totalTickets": 221718,
+      "avgPrice": 255
+    },
+    {
+      "date": "2023/11/05",
+      "totalValue": 4864,
+      "totalTickets": 192357,
+      "avgPrice": 253
+    },
+    {
+      "date": "2023/11/12",
+      "totalValue": 3241,
+      "totalTickets": 117744,
+      "avgPrice": 275
+    },
+    {
+      "date": "2023/11/19",
+      "totalValue": 4932,
+      "totalTickets": 180652,
+      "avgPrice": 273
+    },
+    {
+      "date": "2023/11/26",
+      "totalValue": 5635,
+      "totalTickets": 206883,
+      "avgPrice": 272
+    },
+    {
+      "date": "2023/12/10",
+      "totalValue": 2495,
+      "totalTickets": 99863,
+      "avgPrice": 250
+    },
+    {
+      "date": "2023/12/17",
+      "totalValue": 8019,
+      "totalTickets": 309676,
+      "avgPrice": 259
+    },
+    {
+      "date": "2023/12/24",
+      "totalValue": 5439,
+      "totalTickets": 213596,
+      "avgPrice": 255
+    },
+    {
+      "date": "2023/12/31",
+      "totalValue": 11610,
+      "totalTickets": 437110,
+      "avgPrice": 266
+    },
+    {
+      "date": "2024/01/07",
+      "totalValue": 9107,
+      "totalTickets": 349570,
+      "avgPrice": 261
+    },
+    {
+      "date": "2024/01/14",
+      "totalValue": 5585,
+      "totalTickets": 219910,
+      "avgPrice": 254
+    },
+    {
+      "date": "2024/01/28",
+      "totalValue": 8652,
+      "totalTickets": 337561,
+      "avgPrice": 256
+    },
+    {
+      "date": "2024/02/11",
+      "totalValue": 1552,
+      "totalTickets": 61886,
+      "avgPrice": 251
+    },
+    {
+      "date": "2024/03/03",
+      "totalValue": 5846,
+      "totalTickets": 227639,
+      "avgPrice": 257
+    },
+    {
+      "date": "2024/03/10",
+      "totalValue": 8926,
+      "totalTickets": 300412,
+      "avgPrice": 297
+    },
+    {
+      "date": "2024/03/17",
+      "totalValue": 9563,
+      "totalTickets": 333872,
+      "avgPrice": 286
+    },
+    {
+      "date": "2024/03/24",
+      "totalValue": 8819,
+      "totalTickets": 317228,
+      "avgPrice": 278
+    },
+    {
+      "date": "2024/03/31",
+      "totalValue": 5459,
+      "totalTickets": 207702,
+      "avgPrice": 263
+    },
+    {
+      "date": "2024/04/07",
+      "totalValue": 15280,
+      "totalTickets": 554940,
+      "avgPrice": 275
+    },
+    {
+      "date": "2024/04/14",
+      "totalValue": 13864,
+      "totalTickets": 501264,
+      "avgPrice": 277
+    },
+    {
+      "date": "2024/04/21",
+      "totalValue": 11353,
+      "totalTickets": 409725,
+      "avgPrice": 277
+    },
+    {
+      "date": "2024/04/28",
+      "totalValue": 8638,
+      "totalTickets": 318956,
+      "avgPrice": 271
+    },
+    {
+      "date": "2024/05/05",
+      "totalValue": 8567,
+      "totalTickets": 319450,
+      "avgPrice": 268
+    },
+    {
+      "date": "2024/05/12",
+      "totalValue": 4576,
+      "totalTickets": 176003,
+      "avgPrice": 260
+    },
+    {
+      "date": "2024/05/19",
+      "totalValue": 4280,
+      "totalTickets": 157939,
+      "avgPrice": 271
+    },
+    {
+      "date": "2024/05/26",
+      "totalValue": 5559,
+      "totalTickets": 213176,
+      "avgPrice": 261
+    },
+    {
+      "date": "2024/06/02",
+      "totalValue": 5950,
+      "totalTickets": 224500,
+      "avgPrice": 265
+    },
+    {
+      "date": "2024/06/09",
+      "totalValue": 3992,
+      "totalTickets": 152822,
+      "avgPrice": 261
+    },
+    {
+      "date": "2024/06/16",
+      "totalValue": 7213,
+      "totalTickets": 272429,
+      "avgPrice": 265
+    },
+    {
+      "date": "2024/06/23",
+      "totalValue": 15624,
+      "totalTickets": 580334,
+      "avgPrice": 269
+    },
+    {
+      "date": "2024/06/30",
+      "totalValue": 14161,
+      "totalTickets": 540130,
+      "avgPrice": 262
+    },
+    {
+      "date": "2024/07/07",
+      "totalValue": 16780,
+      "totalTickets": 635974,
+      "avgPrice": 264
+    },
+    {
+      "date": "2024/07/14",
+      "totalValue": 15984,
+      "totalTickets": 606736,
+      "avgPrice": 263
+    },
+    {
+      "date": "2024/07/21",
+      "totalValue": 12856,
+      "totalTickets": 490125,
+      "avgPrice": 262
+    },
+    {
+      "date": "2024/07/28",
+      "totalValue": 10331,
+      "totalTickets": 393614,
+      "avgPrice": 262
+    },
+    {
+      "date": "2024/08/04",
+      "totalValue": 16840,
+      "totalTickets": 616325,
+      "avgPrice": 273
+    },
+    {
+      "date": "2024/08/11",
+      "totalValue": 13081,
+      "totalTickets": 472510,
+      "avgPrice": 277
+    },
+    {
+      "date": "2024/08/18",
+      "totalValue": 9469,
+      "totalTickets": 353061,
+      "avgPrice": 268
+    },
+    {
+      "date": "2024/08/25",
+      "totalValue": 20946,
+      "totalTickets": 780067,
+      "avgPrice": 269
+    },
+    {
+      "date": "2024/09/01",
+      "totalValue": 13760,
+      "totalTickets": 501031,
+      "avgPrice": 275
+    },
+    {
+      "date": "2024/09/08",
+      "totalValue": 6944,
+      "totalTickets": 254535,
+      "avgPrice": 273
+    },
+    {
+      "date": "2024/09/15",
+      "totalValue": 4559,
+      "totalTickets": 165704,
+      "avgPrice": 275
+    },
+    {
+      "date": "2024/09/22",
+      "totalValue": 6538,
+      "totalTickets": 245473,
+      "avgPrice": 266
+    },
+    {
+      "date": "2024/09/29",
+      "totalValue": 4634,
+      "totalTickets": 169029,
+      "avgPrice": 274
+    },
+    {
+      "date": "2024/10/06",
+      "totalValue": 3944,
+      "totalTickets": 152206,
+      "avgPrice": 259
+    },
+    {
+      "date": "2024/10/13",
+      "totalValue": 6924,
+      "totalTickets": 259215,
+      "avgPrice": 267
+    },
+    {
+      "date": "2024/10/27",
+      "totalValue": 3869,
+      "totalTickets": 148915,
+      "avgPrice": 260
+    },
+    {
+      "date": "2024/11/10",
+      "totalValue": 5773,
+      "totalTickets": 217303,
+      "avgPrice": 266
+    },
+    {
+      "date": "2024/11/17",
+      "totalValue": 5348,
+      "totalTickets": 206069,
+      "avgPrice": 260
+    },
+    {
+      "date": "2024/11/24",
+      "totalValue": 5074,
+      "totalTickets": 192611,
+      "avgPrice": 263
+    },
+    {
+      "date": "2024/12/01",
+      "totalValue": 4824,
+      "totalTickets": 178883,
+      "avgPrice": 270
+    },
+    {
+      "date": "2024/12/08",
+      "totalValue": 7621,
+      "totalTickets": 272490,
+      "avgPrice": 280
+    },
+    {
+      "date": "2024/12/22",
+      "totalValue": 5092,
+      "totalTickets": 183619,
+      "avgPrice": 277
+    },
+    {
+      "date": "2024/12/29",
+      "totalValue": 7285,
+      "totalTickets": 272694,
+      "avgPrice": 267
+    },
+    {
+      "date": "2025/01/05",
+      "totalValue": 10001,
+      "totalTickets": 362847,
+      "avgPrice": 276
+    },
+    {
+      "date": "2025/01/12",
+      "totalValue": 5884,
+      "totalTickets": 212533,
+      "avgPrice": 277
+    },
+    {
+      "date": "2025/01/19",
+      "totalValue": 5510,
+      "totalTickets": 202249,
+      "avgPrice": 272
+    },
+    {
+      "date": "2025/01/26",
+      "totalValue": 5689,
+      "totalTickets": 204040,
+      "avgPrice": 279
+    },
+    {
+      "date": "2025/02/02",
+      "totalValue": 7128,
+      "totalTickets": 262779,
+      "avgPrice": 271
+    },
+    {
+      "date": "2025/02/09",
+      "totalValue": 6810,
+      "totalTickets": 237919,
+      "avgPrice": 286
+    },
+    {
+      "date": "2025/02/16",
+      "totalValue": 3800,
+      "totalTickets": 135655,
+      "avgPrice": 280
+    },
+    {
+      "date": "2025/02/23",
+      "totalValue": 5252,
+      "totalTickets": 191665,
+      "avgPrice": 274
+    },
+    {
+      "date": "2025/03/02",
+      "totalValue": 5528,
+      "totalTickets": 186594,
+      "avgPrice": 296
+    },
+    {
+      "date": "2025/03/09",
+      "totalValue": 6252,
+      "totalTickets": 215786,
+      "avgPrice": 290
+    },
+    {
+      "date": "2025/03/23",
+      "totalValue": 4682,
+      "totalTickets": 169854,
+      "avgPrice": 276
+    },
+    {
+      "date": "2025/04/06",
+      "totalValue": 6312,
+      "totalTickets": 237005,
+      "avgPrice": 266
+    },
+    {
+      "date": "2025/04/27",
+      "totalValue": 6070,
+      "totalTickets": 213348,
+      "avgPrice": 285
+    },
+    {
+      "date": "2025/05/11",
+      "totalValue": 7413,
+      "totalTickets": 268749,
+      "avgPrice": 276
+    },
+    {
+      "date": "2025/05/18",
+      "totalValue": 5278,
+      "totalTickets": 189200,
+      "avgPrice": 279
+    },
+    {
+      "date": "2025/05/25",
+      "totalValue": 18147,
+      "totalTickets": 603046,
+      "avgPrice": 301
+    },
+    {
+      "date": "2025/06/01",
+      "totalValue": 17562,
+      "totalTickets": 594852,
+      "avgPrice": 295
+    },
+    {
+      "date": "2025/06/08",
+      "totalValue": 10397,
+      "totalTickets": 356574,
+      "avgPrice": 292
+    },
+    {
+      "date": "2025/06/15",
+      "totalValue": 13870,
+      "totalTickets": 486841,
+      "avgPrice": 285
+    },
+    {
+      "date": "2025/07/06",
+      "totalValue": 20010,
+      "totalTickets": 667376,
+      "avgPrice": 300
+    },
+    {
+      "date": "2025/07/13",
+      "totalValue": 23717,
+      "totalTickets": 816826,
+      "avgPrice": 290
+    },
+    {
+      "date": "2025/07/20",
+      "totalValue": 20379,
+      "totalTickets": 689853,
+      "avgPrice": 295
+    },
+    {
+      "date": "2025/07/27",
+      "totalValue": 17156,
+      "totalTickets": 603939,
+      "avgPrice": 284
+    },
+    {
+      "date": "2025/08/10",
+      "totalValue": 28318,
+      "totalTickets": 939162,
+      "avgPrice": 302
+    },
+    {
+      "date": "2025/08/17",
+      "totalValue": 32017,
+      "totalTickets": 1046514,
+      "avgPrice": 306
+    },
+    {
+      "date": "2025/08/24",
+      "totalValue": 31492,
+      "totalTickets": 1056580,
+      "avgPrice": 298
+    },
+    {
+      "date": "2025/08/31",
+      "totalValue": 24447,
+      "totalTickets": 827167,
+      "avgPrice": 296
+    },
+    {
+      "date": "2025/09/07",
+      "totalValue": 11140,
+      "totalTickets": 366646,
+      "avgPrice": 304
+    },
+    {
+      "date": "2025/09/14",
+      "totalValue": 14208,
+      "totalTickets": 487188,
+      "avgPrice": 292
+    },
+    {
+      "date": "2025/09/21",
+      "totalValue": 11753,
+      "totalTickets": 406134,
+      "avgPrice": 289
+    },
+    {
+      "date": "2025/09/28",
+      "totalValue": 13635,
+      "totalTickets": 467561,
+      "avgPrice": 292
+    },
+    {
+      "date": "2025/10/05",
+      "totalValue": 12634,
+      "totalTickets": 431125,
+      "avgPrice": 293
+    },
+    {
+      "date": "2025/10/19",
+      "totalValue": 10259,
+      "totalTickets": 356988,
+      "avgPrice": 287
+    },
+    {
+      "date": "2025/10/26",
+      "totalValue": 10266,
+      "totalTickets": 352951,
+      "avgPrice": 291
+    },
+    {
+      "date": "2025/11/02",
+      "totalValue": 6934,
+      "totalTickets": 232926,
+      "avgPrice": 298
+    },
+    {
+      "date": "2025/11/09",
+      "totalValue": 7485,
+      "totalTickets": 238029,
+      "avgPrice": 314
+    },
+    {
+      "date": "2025/11/16",
+      "totalValue": 7829,
+      "totalTickets": 266613,
+      "avgPrice": 294
+    },
+    {
+      "date": "2025/11/23",
+      "totalValue": 7524,
+      "totalTickets": 266503,
+      "avgPrice": 282
+    },
+    {
+      "date": "2025/11/30",
+      "totalValue": 6835,
+      "totalTickets": 244083,
+      "avgPrice": 280
+    },
+    {
+      "date": "2025/12/07",
+      "totalValue": 23740,
+      "totalTickets": 814428,
+      "avgPrice": 291
+    },
+    {
+      "date": "2025/12/12",
+      "totalValue": 19004,
+      "totalTickets": 655130,
+      "avgPrice": 290
+    },
+    {
+      "date": "2025/12/21",
+      "totalValue": 10574,
+      "totalTickets": 382151,
+      "avgPrice": 277
+    },
+    {
+      "date": "2025/12/28",
+      "totalValue": 25284,
+      "totalTickets": 775982,
+      "avgPrice": 326
+    },
+    {
+      "date": "2026/01/04",
+      "totalValue": 18001,
+      "totalTickets": 550479,
+      "avgPrice": 327
+    },
+    {
+      "date": "2026/01/11",
+      "totalValue": 12565,
+      "totalTickets": 411701,
+      "avgPrice": 305
+    },
+    {
+      "date": "2026/01/18",
+      "totalValue": 16188,
+      "totalTickets": 555622,
+      "avgPrice": 291
+    },
+    {
+      "date": "2026/01/25",
+      "totalValue": 23410,
+      "totalTickets": 820448,
+      "avgPrice": 285
+    },
+    {
+      "date": "2026/02/01",
+      "totalValue": 21495,
+      "totalTickets": 756701,
+      "avgPrice": 284
+    },
+    {
+      "date": "2026/02/08",
+      "totalValue": 14474,
+      "totalTickets": 511416,
+      "avgPrice": 283
+    },
+    {
+      "date": "2026/02/15",
+      "totalValue": 6032,
+      "totalTickets": 218883,
+      "avgPrice": 276
+    },
+    {
+      "date": "2026/02/22",
+      "totalValue": 18305,
+      "totalTickets": 654889,
+      "avgPrice": 280
+    },
+    {
+      "date": "2026/03/01",
+      "totalValue": 11618,
+      "totalTickets": 418498,
+      "avgPrice": 278
+    },
+    {
+      "date": "2026/03/08",
+      "totalValue": 6874,
+      "totalTickets": 248414,
+      "avgPrice": 277
+    },
+    {
+      "date": "2026/03/15",
+      "totalValue": 5582,
+      "totalTickets": 198181,
+      "avgPrice": 282
+    },
+    {
+      "date": "2026/03/22",
+      "totalValue": 6654,
+      "totalTickets": 217004,
+      "avgPrice": 307
+    },
+    {
+      "date": "2026/03/29",
+      "totalValue": 13019,
+      "totalTickets": 436082,
+      "avgPrice": 299
+    },
+    {
+      "date": "2026/04/05",
+      "totalValue": 12751,
+      "totalTickets": 440803,
+      "avgPrice": 289
+    },
+    {
+      "date": "2026/04/12",
+      "totalValue": 16998,
+      "totalTickets": 579923,
+      "avgPrice": 293
+    },
+    {
+      "date": "2026/04/19",
+      "totalValue": 8878,
+      "totalTickets": 304808,
+      "avgPrice": 291
+    },
+    {
+      "date": "2026/04/26",
+      "totalValue": 9299,
+      "totalTickets": 313385,
+      "avgPrice": 297
+    },
+    {
+      "date": "2026/05/03",
+      "totalValue": 10668,
+      "totalTickets": 349714,
+      "avgPrice": 305
+    },
+    {
+      "date": "2026/05/10",
+      "totalValue": 12298,
+      "totalTickets": 418798,
+      "avgPrice": 294
+    },
+    {
+      "date": "2026/05/24",
+      "totalValue": 8738,
+      "totalTickets": 308310,
+      "avgPrice": 283
+    },
+    {
+      "date": "2026/05/31",
+      "totalValue": 13905,
+      "totalTickets": 484307,
+      "avgPrice": 287
+    },
+    {
+      "date": "2026/06/07",
+      "totalValue": 12285,
+      "totalTickets": 422987,
+      "avgPrice": 290
+    }
+  ],
+  "monthly": [
+    {
+      "month": "2017-10",
+      "label": "2017年10月",
+      "totalValue": 47144,
+      "totalTickets": 2066877,
+      "avgPrice": 228
+    },
+    {
+      "month": "2017-11",
+      "label": "2017年11月",
+      "totalValue": 39892,
+      "totalTickets": 1737402,
+      "avgPrice": 230
+    },
+    {
+      "month": "2017-12",
+      "label": "2017年12月",
+      "totalValue": 61467,
+      "totalTickets": 2674193,
+      "avgPrice": 230
+    },
+    {
+      "month": "2018-01",
+      "label": "2018年1月",
+      "totalValue": 71229,
+      "totalTickets": 3090815,
+      "avgPrice": 230
+    },
+    {
+      "month": "2018-02",
+      "label": "2018年2月",
+      "totalValue": 87901,
+      "totalTickets": 3793928,
+      "avgPrice": 232
+    },
+    {
+      "month": "2018-03",
+      "label": "2018年3月",
+      "totalValue": 39209,
+      "totalTickets": 1724251,
+      "avgPrice": 227
+    },
+    {
+      "month": "2018-04",
+      "label": "2018年4月",
+      "totalValue": 57877,
+      "totalTickets": 2433193,
+      "avgPrice": 238
+    },
+    {
+      "month": "2018-05",
+      "label": "2018年5月",
+      "totalValue": 54034,
+      "totalTickets": 2281668,
+      "avgPrice": 237
+    },
+    {
+      "month": "2018-06",
+      "label": "2018年6月",
+      "totalValue": 51245,
+      "totalTickets": 2179102,
+      "avgPrice": 235
+    },
+    {
+      "month": "2018-07",
+      "label": "2018年7月",
+      "totalValue": 69174,
+      "totalTickets": 3037385,
+      "avgPrice": 228
+    },
+    {
+      "month": "2018-08",
+      "label": "2018年8月",
+      "totalValue": 74355,
+      "totalTickets": 3205804,
+      "avgPrice": 232
+    },
+    {
+      "month": "2018-09",
+      "label": "2018年9月",
+      "totalValue": 52140,
+      "totalTickets": 2293508,
+      "avgPrice": 227
+    },
+    {
+      "month": "2018-10",
+      "label": "2018年10月",
+      "totalValue": 40977,
+      "totalTickets": 1798103,
+      "avgPrice": 228
+    },
+    {
+      "month": "2018-11",
+      "label": "2018年11月",
+      "totalValue": 34368,
+      "totalTickets": 1501316,
+      "avgPrice": 229
+    },
+    {
+      "month": "2018-12",
+      "label": "2018年12月",
+      "totalValue": 76402,
+      "totalTickets": 3303651,
+      "avgPrice": 231
+    },
+    {
+      "month": "2019-01",
+      "label": "2019年1月",
+      "totalValue": 40962,
+      "totalTickets": 1768449,
+      "avgPrice": 232
+    },
+    {
+      "month": "2019-02",
+      "label": "2019年2月",
+      "totalValue": 40940,
+      "totalTickets": 1768720,
+      "avgPrice": 231
+    },
+    {
+      "month": "2019-03",
+      "label": "2019年3月",
+      "totalValue": 52040,
+      "totalTickets": 2247975,
+      "avgPrice": 231
+    },
+    {
+      "month": "2019-04",
+      "label": "2019年4月",
+      "totalValue": 37155,
+      "totalTickets": 1630084,
+      "avgPrice": 228
+    },
+    {
+      "month": "2019-05",
+      "label": "2019年5月",
+      "totalValue": 70818,
+      "totalTickets": 2853560,
+      "avgPrice": 248
+    },
+    {
+      "month": "2019-06",
+      "label": "2019年6月",
+      "totalValue": 74025,
+      "totalTickets": 3158173,
+      "avgPrice": 234
+    },
+    {
+      "month": "2019-07",
+      "label": "2019年7月",
+      "totalValue": 77434,
+      "totalTickets": 3343529,
+      "avgPrice": 232
+    },
+    {
+      "month": "2019-08",
+      "label": "2019年8月",
+      "totalValue": 14554,
+      "totalTickets": 637837,
+      "avgPrice": 228
+    },
+    {
+      "month": "2019-09",
+      "label": "2019年9月",
+      "totalValue": 54471,
+      "totalTickets": 2358335,
+      "avgPrice": 231
+    },
+    {
+      "month": "2019-10",
+      "label": "2019年10月",
+      "totalValue": 48991,
+      "totalTickets": 2107392,
+      "avgPrice": 232
+    },
+    {
+      "month": "2019-11",
+      "label": "2019年11月",
+      "totalValue": 33557,
+      "totalTickets": 1460738,
+      "avgPrice": 230
+    },
+    {
+      "month": "2019-12",
+      "label": "2019年12月",
+      "totalValue": 60440,
+      "totalTickets": 2599693,
+      "avgPrice": 232
+    },
+    {
+      "month": "2020-01",
+      "label": "2020年1月",
+      "totalValue": 48612,
+      "totalTickets": 2066500,
+      "avgPrice": 235
+    },
+    {
+      "month": "2020-02",
+      "label": "2020年2月",
+      "totalValue": 28528,
+      "totalTickets": 1227589,
+      "avgPrice": 232
+    },
+    {
+      "month": "2020-03",
+      "label": "2020年3月",
+      "totalValue": 19717,
+      "totalTickets": 860665,
+      "avgPrice": 229
+    },
+    {
+      "month": "2020-04",
+      "label": "2020年4月",
+      "totalValue": 5260,
+      "totalTickets": 230900,
+      "avgPrice": 228
+    },
+    {
+      "month": "2020-05",
+      "label": "2020年5月",
+      "totalValue": 9953,
+      "totalTickets": 423880,
+      "avgPrice": 235
+    },
+    {
+      "month": "2020-06",
+      "label": "2020年6月",
+      "totalValue": 7155,
+      "totalTickets": 305805,
+      "avgPrice": 234
+    },
+    {
+      "month": "2020-07",
+      "label": "2020年7月",
+      "totalValue": 20844,
+      "totalTickets": 873956,
+      "avgPrice": 238
+    },
+    {
+      "month": "2020-08",
+      "label": "2020年8月",
+      "totalValue": 34567,
+      "totalTickets": 1479890,
+      "avgPrice": 234
+    },
+    {
+      "month": "2020-09",
+      "label": "2020年9月",
+      "totalValue": 38108,
+      "totalTickets": 1579030,
+      "avgPrice": 241
+    },
+    {
+      "month": "2020-10",
+      "label": "2020年10月",
+      "totalValue": 18762,
+      "totalTickets": 793765,
+      "avgPrice": 236
+    },
+    {
+      "month": "2020-11",
+      "label": "2020年11月",
+      "totalValue": 66550,
+      "totalTickets": 2802421,
+      "avgPrice": 237
+    },
+    {
+      "month": "2020-12",
+      "label": "2020年12月",
+      "totalValue": 37729,
+      "totalTickets": 1608837,
+      "avgPrice": 235
+    },
+    {
+      "month": "2021-01",
+      "label": "2021年1月",
+      "totalValue": 28125,
+      "totalTickets": 1169124,
+      "avgPrice": 241
+    },
+    {
+      "month": "2021-02",
+      "label": "2021年2月",
+      "totalValue": 35200,
+      "totalTickets": 1479520,
+      "avgPrice": 238
+    },
+    {
+      "month": "2021-03",
+      "label": "2021年3月",
+      "totalValue": 13104,
+      "totalTickets": 557807,
+      "avgPrice": 235
+    },
+    {
+      "month": "2021-04",
+      "label": "2021年4月",
+      "totalValue": 64833,
+      "totalTickets": 2680530,
+      "avgPrice": 242
+    },
+    {
+      "month": "2021-05",
+      "label": "2021年5月",
+      "totalValue": 23160,
+      "totalTickets": 973727,
+      "avgPrice": 238
+    },
+    {
+      "month": "2021-07",
+      "label": "2021年7月",
+      "totalValue": 3240,
+      "totalTickets": 127437,
+      "avgPrice": 254
+    },
+    {
+      "month": "2021-08",
+      "label": "2021年8月",
+      "totalValue": 20087,
+      "totalTickets": 798046,
+      "avgPrice": 252
+    },
+    {
+      "month": "2021-09",
+      "label": "2021年9月",
+      "totalValue": 25214,
+      "totalTickets": 980404,
+      "avgPrice": 257
+    },
+    {
+      "month": "2021-10",
+      "label": "2021年10月",
+      "totalValue": 7486,
+      "totalTickets": 298276,
+      "avgPrice": 251
+    },
+    {
+      "month": "2021-11",
+      "label": "2021年11月",
+      "totalValue": 16372,
+      "totalTickets": 660774,
+      "avgPrice": 248
+    },
+    {
+      "month": "2021-12",
+      "label": "2021年12月",
+      "totalValue": 45699,
+      "totalTickets": 1868490,
+      "avgPrice": 245
+    },
+    {
+      "month": "2022-01",
+      "label": "2022年1月",
+      "totalValue": 20624,
+      "totalTickets": 840243,
+      "avgPrice": 245
+    },
+    {
+      "month": "2022-02",
+      "label": "2022年2月",
+      "totalValue": 14949,
+      "totalTickets": 615857,
+      "avgPrice": 243
+    },
+    {
+      "month": "2022-03",
+      "label": "2022年3月",
+      "totalValue": 37676,
+      "totalTickets": 1519391,
+      "avgPrice": 248
+    },
+    {
+      "month": "2022-04",
+      "label": "2022年4月",
+      "totalValue": 14578,
+      "totalTickets": 597353,
+      "avgPrice": 244
+    },
+    {
+      "month": "2022-05",
+      "label": "2022年5月",
+      "totalValue": 22880,
+      "totalTickets": 868719,
+      "avgPrice": 263
+    },
+    {
+      "month": "2022-06",
+      "label": "2022年6月",
+      "totalValue": 60978,
+      "totalTickets": 2296012,
+      "avgPrice": 266
+    },
+    {
+      "month": "2022-07",
+      "label": "2022年7月",
+      "totalValue": 55922,
+      "totalTickets": 2172750,
+      "avgPrice": 257
+    },
+    {
+      "month": "2022-08",
+      "label": "2022年8月",
+      "totalValue": 40725,
+      "totalTickets": 1600136,
+      "avgPrice": 255
+    },
+    {
+      "month": "2022-09",
+      "label": "2022年9月",
+      "totalValue": 20507,
+      "totalTickets": 816573,
+      "avgPrice": 251
+    },
+    {
+      "month": "2022-10",
+      "label": "2022年10月",
+      "totalValue": 9428,
+      "totalTickets": 370989,
+      "avgPrice": 254
+    },
+    {
+      "month": "2022-11",
+      "label": "2022年11月",
+      "totalValue": 20113,
+      "totalTickets": 803610,
+      "avgPrice": 250
+    },
+    {
+      "month": "2022-12",
+      "label": "2022年12月",
+      "totalValue": 25960,
+      "totalTickets": 880254,
+      "avgPrice": 295
+    },
+    {
+      "month": "2023-01",
+      "label": "2023年1月",
+      "totalValue": 80189,
+      "totalTickets": 2858673,
+      "avgPrice": 281
+    },
+    {
+      "month": "2023-02",
+      "label": "2023年2月",
+      "totalValue": 12097,
+      "totalTickets": 463057,
+      "avgPrice": 261
+    },
+    {
+      "month": "2023-03",
+      "label": "2023年3月",
+      "totalValue": 29064,
+      "totalTickets": 1143302,
+      "avgPrice": 254
+    },
+    {
+      "month": "2023-04",
+      "label": "2023年4月",
+      "totalValue": 43917,
+      "totalTickets": 1725374,
+      "avgPrice": 255
+    },
+    {
+      "month": "2023-05",
+      "label": "2023年5月",
+      "totalValue": 26072,
+      "totalTickets": 1013366,
+      "avgPrice": 257
+    },
+    {
+      "month": "2023-06",
+      "label": "2023年6月",
+      "totalValue": 23748,
+      "totalTickets": 934875,
+      "avgPrice": 254
+    },
+    {
+      "month": "2023-07",
+      "label": "2023年7月",
+      "totalValue": 82646,
+      "totalTickets": 3097062,
+      "avgPrice": 267
+    },
+    {
+      "month": "2023-08",
+      "label": "2023年8月",
+      "totalValue": 39983,
+      "totalTickets": 1522567,
+      "avgPrice": 263
+    },
+    {
+      "month": "2023-09",
+      "label": "2023年9月",
+      "totalValue": 17768,
+      "totalTickets": 683786,
+      "avgPrice": 260
+    },
+    {
+      "month": "2023-10",
+      "label": "2023年10月",
+      "totalValue": 28278,
+      "totalTickets": 1109038,
+      "avgPrice": 255
+    },
+    {
+      "month": "2023-11",
+      "label": "2023年11月",
+      "totalValue": 18672,
+      "totalTickets": 697636,
+      "avgPrice": 268
+    },
+    {
+      "month": "2023-12",
+      "label": "2023年12月",
+      "totalValue": 27562,
+      "totalTickets": 1060245,
+      "avgPrice": 260
+    },
+    {
+      "month": "2024-01",
+      "label": "2024年1月",
+      "totalValue": 23344,
+      "totalTickets": 907041,
+      "avgPrice": 257
+    },
+    {
+      "month": "2024-02",
+      "label": "2024年2月",
+      "totalValue": 1552,
+      "totalTickets": 61886,
+      "avgPrice": 251
+    },
+    {
+      "month": "2024-03",
+      "label": "2024年3月",
+      "totalValue": 38613,
+      "totalTickets": 1386853,
+      "avgPrice": 278
+    },
+    {
+      "month": "2024-04",
+      "label": "2024年4月",
+      "totalValue": 49135,
+      "totalTickets": 1784885,
+      "avgPrice": 275
+    },
+    {
+      "month": "2024-05",
+      "label": "2024年5月",
+      "totalValue": 22982,
+      "totalTickets": 866568,
+      "avgPrice": 265
+    },
+    {
+      "month": "2024-06",
+      "label": "2024年6月",
+      "totalValue": 46940,
+      "totalTickets": 1770215,
+      "avgPrice": 265
+    },
+    {
+      "month": "2024-07",
+      "label": "2024年7月",
+      "totalValue": 55952,
+      "totalTickets": 2126449,
+      "avgPrice": 263
+    },
+    {
+      "month": "2024-08",
+      "label": "2024年8月",
+      "totalValue": 60337,
+      "totalTickets": 2221963,
+      "avgPrice": 272
+    },
+    {
+      "month": "2024-09",
+      "label": "2024年9月",
+      "totalValue": 36436,
+      "totalTickets": 1335772,
+      "avgPrice": 273
+    },
+    {
+      "month": "2024-10",
+      "label": "2024年10月",
+      "totalValue": 14737,
+      "totalTickets": 560336,
+      "avgPrice": 263
+    },
+    {
+      "month": "2024-11",
+      "label": "2024年11月",
+      "totalValue": 16195,
+      "totalTickets": 615983,
+      "avgPrice": 263
+    },
+    {
+      "month": "2024-12",
+      "label": "2024年12月",
+      "totalValue": 24823,
+      "totalTickets": 907686,
+      "avgPrice": 273
+    },
+    {
+      "month": "2025-01",
+      "label": "2025年1月",
+      "totalValue": 27083,
+      "totalTickets": 981669,
+      "avgPrice": 276
+    },
+    {
+      "month": "2025-02",
+      "label": "2025年2月",
+      "totalValue": 22991,
+      "totalTickets": 828018,
+      "avgPrice": 278
+    },
+    {
+      "month": "2025-03",
+      "label": "2025年3月",
+      "totalValue": 16462,
+      "totalTickets": 572234,
+      "avgPrice": 288
+    },
+    {
+      "month": "2025-04",
+      "label": "2025年4月",
+      "totalValue": 12382,
+      "totalTickets": 450353,
+      "avgPrice": 275
+    },
+    {
+      "month": "2025-05",
+      "label": "2025年5月",
+      "totalValue": 30838,
+      "totalTickets": 1060995,
+      "avgPrice": 291
+    },
+    {
+      "month": "2025-06",
+      "label": "2025年6月",
+      "totalValue": 41829,
+      "totalTickets": 1438267,
+      "avgPrice": 291
+    },
+    {
+      "month": "2025-07",
+      "label": "2025年7月",
+      "totalValue": 81262,
+      "totalTickets": 2777994,
+      "avgPrice": 293
+    },
+    {
+      "month": "2025-08",
+      "label": "2025年8月",
+      "totalValue": 116275,
+      "totalTickets": 3869423,
+      "avgPrice": 300
+    },
+    {
+      "month": "2025-09",
+      "label": "2025年9月",
+      "totalValue": 50736,
+      "totalTickets": 1727529,
+      "avgPrice": 294
+    },
+    {
+      "month": "2025-10",
+      "label": "2025年10月",
+      "totalValue": 33159,
+      "totalTickets": 1141064,
+      "avgPrice": 291
+    },
+    {
+      "month": "2025-11",
+      "label": "2025年11月",
+      "totalValue": 36607,
+      "totalTickets": 1248154,
+      "avgPrice": 293
+    },
+    {
+      "month": "2025-12",
+      "label": "2025年12月",
+      "totalValue": 78602,
+      "totalTickets": 2627691,
+      "avgPrice": 299
+    },
+    {
+      "month": "2026-01",
+      "label": "2026年1月",
+      "totalValue": 70164,
+      "totalTickets": 2338250,
+      "avgPrice": 300
+    },
+    {
+      "month": "2026-02",
+      "label": "2026年2月",
+      "totalValue": 60307,
+      "totalTickets": 2141889,
+      "avgPrice": 282
+    },
+    {
+      "month": "2026-03",
+      "label": "2026年3月",
+      "totalValue": 43748,
+      "totalTickets": 1518179,
+      "avgPrice": 288
+    },
+    {
+      "month": "2026-04",
+      "label": "2026年4月",
+      "totalValue": 47926,
+      "totalTickets": 1638919,
+      "avgPrice": 292
+    },
+    {
+      "month": "2026-05",
+      "label": "2026年5月",
+      "totalValue": 45608,
+      "totalTickets": 1561129,
+      "avgPrice": 292
+    },
+    {
+      "month": "2026-06",
+      "label": "2026年6月",
+      "totalValue": 12285,
+      "totalTickets": 422987,
+      "avgPrice": 290
+    }
+  ]
+}
