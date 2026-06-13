@@ -8,13 +8,15 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>台灣電影票房 Bar Chart Race — 爛片現形鏡</title>
+  <title>排行榜動畫 — 台灣電影票房</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
 
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;900&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="bar-race.css" />
+
+  <script src="theme-loader.js"></script>
 
 </head>
 
@@ -35,6 +37,8 @@
       <a class="bcr-nav-link" href="analytics.html">票房分析</a>
 
       <a class="bcr-nav-link" href="about.html">資料說明</a>
+
+      <a class="bcr-nav-link" href="style-picker.html">風格試用</a>
 
     </nav>
 
@@ -72,7 +76,7 @@
 
         <span id="bcr-speed-label">速度（秒/週）</span>
 
-        <input type="range" id="bcr-speed" min="0.02" max="3" step="0.02" value="0.25" aria-label="速度滑桿" />
+        <input type="range" id="bcr-speed" min="0.02" max="3" step="0.02" value="3" aria-label="速度滑桿" />
 
         <input
           type="number"
@@ -81,7 +85,7 @@
           min="0.02"
           max="10"
           step="0.01"
-          value="0.25"
+          value="3"
           aria-label="自訂速度（秒/週）"
         />
 
@@ -185,7 +189,7 @@
 
     <footer class="bcr-footer">
 
-      爛片現形鏡 專題延伸｜
+      台灣電影票房｜
 
       <a href="../output/index.html">返回主儀表板</a>
 
@@ -220,7 +224,7 @@
     const SPEED_INPUT_MAX = 10;
 
     function clampSpeed(sec) {
-      if (Number.isNaN(sec)) return 0.25;
+      if (Number.isNaN(sec)) return 3;
       return Math.min(SPEED_INPUT_MAX, Math.max(SPEED_MIN, sec));
     }
 

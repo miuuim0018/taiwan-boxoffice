@@ -1339,7 +1339,7 @@
         <p class="analytics-meta">點片名查看詳情，或點上方象限卡看完整排行</p>
       </div>
       <div class="rating-outlier-grid">
-        ${rowHtml(hit, "高票房 · 低評分", "「爛片現形」候選", "hit")}
+        ${rowHtml(hit, "高票房 · 低評分", "高票房低口碑候選", "hit")}
         ${rowHtml(niche, "低票房 · 高評分", "口碑佳但院線較弱", "niche")}
       </div>`;
 
