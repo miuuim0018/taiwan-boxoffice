@@ -128,7 +128,7 @@
   let selectedMovieName = null;
   let countryPicker = null;
 
-  const { matchesCountries, formatCountryFilterNote, CountryMultiSelect, collectCountries, collectGenres } =
+  const { matchesCountries, formatCountryFilterNote, CountryMultiSelect, collectCountries, collectGenres, mergeMoviesByName } =
     window.BCR_FILTER;
   const { attachRating } = window.BCR_RATING;
 
@@ -336,7 +336,9 @@
 
   function rawMoviesForYear(year) {
     if (year === ALL_YEARS) {
-      return (rankings.years || []).flatMap((y) => rankings.movies?.[y] || []);
+      return mergeMoviesByName(
+        (rankings.years || []).flatMap((y) => rankings.movies?.[y] || [])
+      );
     }
     return rankings.movies?.[year] || [];
   }

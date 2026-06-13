@@ -77,8 +77,57 @@
     return `（已篩選 ${names.slice(0, 3).join("、")} 等 ${names.length} 國）`;
   }
 
+  /** 歷年合併：同片名跨年度在映時加總票房（避免殘餘週次變成假低票房點） */
+  function mergeMoviesByName(movies) {
+    const map = new Map();
+    (movies || []).forEach((m) => {
+      const key = m.name;
+      if (!key) return;
+      const prev = map.get(key);
+      if (!prev) {
+        map.set(key, { ...m });
+        return;
+      }
+      prev.value = (prev.value || 0) + (m.value || 0);
+      prev.tickets = (prev.tickets || 0) + (m.tickets || 0);
+      prev.weeks = (prev.weeks || 0) + (m.weeks || 0);
+      prev.streak = Math.max(prev.streak || 0, m.streak || 0);
+      prev.crownWeeks = Math.max(prev.crownWeeks || 0, m.crownWeeks || 0);
+      if ((m.value || 0) >= (prev._peakValue || 0)) {
+        prev.country = m.country || prev.country;
+        prev.genre = m.genre || prev.genre;
+        prev._peakValue = m.value || 0;
+      }
+    });
+    return [...map.values()].map(({ _peakValue, ...rest }) => rest);
+  }
+
   function escapeAttr(text) {
     return String(text).replace(/"/g, "&quot;");
+  }
+
+  /** 主要列顯示常用國別，其餘收在「更多國家」 */
+  function splitCountriesForDisplay(countries, maxPrimary = 8) {
+    const sorted = sortCountries(countries);
+    const primaryNames = new Set();
+    const primary = [];
+
+    for (const c of PRIORITY_COUNTRIES) {
+      if (sorted.includes(c) && primary.length < maxPrimary) {
+        primary.push(c);
+        primaryNames.add(c);
+      }
+    }
+    for (const c of sorted) {
+      if (primary.length >= maxPrimary) break;
+      if (!primaryNames.has(c)) {
+        primary.push(c);
+        primaryNames.add(c);
+      }
+    }
+
+    const more = sorted.filter((c) => !primaryNames.has(c));
+    return { primary, more };
   }
 
   class CountryMultiSelect {
@@ -88,6 +137,7 @@
       this.onChange = options.onChange || (() => {});
       this.countries = [];
       this.selected = new Set();
+      this.moreExpanded = false;
       this._bound = false;
     }
 
@@ -120,20 +170,42 @@
         ? `<span class="bcr-multi-filter-hint">已選 ${this.selected.size} 國</span>`
         : `<span class="bcr-multi-filter-hint bcr-multi-filter-hint--muted">未選＝全部國別</span>`;
 
+      const { primary, more } = splitCountriesForDisplay(this.countries);
+      const moreSelected = more.filter((c) => this.selected.has(c)).length;
+      if (moreSelected > 0) this.moreExpanded = true;
+
+      const chipHtml = (c) => {
+        const active = this.selected.has(c) ? " bcr-filter-chip--active" : "";
+        return `<button type="button" class="bcr-filter-chip${active}" data-country="${escapeAttr(c)}">${c}</button>`;
+      };
+
+      const moreBtn =
+        more.length > 0
+          ? `<button type="button" class="bcr-filter-chip bcr-filter-chip--more${
+              this.moreExpanded ? " bcr-filter-chip--more-open" : ""
+            }${moreSelected ? " bcr-filter-chip--more-selected" : ""}" data-action="toggle-more" aria-expanded="${
+              this.moreExpanded ? "true" : "false"
+            }">更多國家 (${more.length})${moreSelected ? ` · 已選 ${moreSelected}` : ""}</button>`
+          : "";
+
+      const morePanel =
+        more.length && this.moreExpanded
+          ? `<div class="bcr-multi-filter-more" role="group" aria-label="更多國別">${more
+              .map(chipHtml)
+              .join("")}</div>`
+          : "";
+
       this.container.innerHTML = `
         <div class="bcr-multi-filter">
           <div class="bcr-multi-filter-head">
             <button type="button" class="bcr-filter-preset-btn${allActive}" data-action="all">全部</button>
             ${hint}
           </div>
-          <div class="bcr-multi-filter-chips" role="group" aria-label="國別多選">
-            ${this.countries
-              .map((c) => {
-                const active = this.selected.has(c) ? " bcr-filter-chip--active" : "";
-                return `<button type="button" class="bcr-filter-chip${active}" data-country="${escapeAttr(c)}">${c}</button>`;
-              })
-              .join("")}
+          <div class="bcr-multi-filter-chips bcr-multi-filter-chips--primary" role="group" aria-label="常用國別">
+            ${primary.map(chipHtml).join("")}
+            ${moreBtn}
           </div>
+          ${morePanel}
         </div>`;
 
       if (!this._bound) {
@@ -148,6 +220,12 @@
 
       if (btn.dataset.action === "all") {
         this.clear();
+        return;
+      }
+
+      if (btn.dataset.action === "toggle-more") {
+        this.moreExpanded = !this.moreExpanded;
+        this.render();
         return;
       }
 
@@ -167,10 +245,12 @@
   global.BCR_FILTER = {
     PRIORITY_COUNTRIES,
     sortCountries,
+    splitCountriesForDisplay,
     collectCountries,
     collectGenres,
     matchesCountries,
     formatCountryFilterNote,
+    mergeMoviesByName,
     CountryMultiSelect,
   };
 })(typeof window !== "undefined" ? window : globalThis);

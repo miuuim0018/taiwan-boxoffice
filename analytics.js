@@ -17,6 +17,7 @@
   let selectedCountryYear = null;
   let selectedCountryMonth = null;
   let selectedCountries = new Set();
+  let countryMoreExpanded = false;
   let posters = {};
   let yearlyRankings = null;
   let movieMeta = {};
@@ -35,7 +36,7 @@
     hit: { label: "高票房低口碑", note: "高票房 · 低評分", sort: (a, b) => b.x - a.x || a.y - b.y },
   };
 
-  const { sortCountries, matchesCountries, CountryMultiSelect, PRIORITY_COUNTRIES } =
+  const { sortCountries, matchesCountries, CountryMultiSelect, PRIORITY_COUNTRIES, splitCountriesForDisplay, mergeMoviesByName } =
     window.BCR_FILTER;
   const {
     buildScatterPoints,
@@ -1092,7 +1093,9 @@
     if (!yearlyRankings) return [];
     let movies = [];
     if (scope === RATING_ALL) {
-      movies = (yearlyRankings.years || []).flatMap((y) => yearlyRankings.movies?.[y] || []);
+      movies = mergeMoviesByName(
+        (yearlyRankings.years || []).flatMap((y) => yearlyRankings.movies?.[y] || [])
+      );
     } else {
       movies = yearlyRankings.movies?.[scope] || [];
     }
@@ -1213,6 +1216,9 @@
     const sampleNotes = countries
       .map((c) => {
         const n = years.filter((y) => avgCountryRatingInYear(c, y) != null).length;
+        if (n === 0) {
+          return `${c} 0 年（缺 TMDB 評分；該國片在台年度票房多未進 Top 30，尚未抓取）`;
+        }
         return `${c} ${n} 年`;
       })
       .join(" · ");
@@ -1577,29 +1583,40 @@
 
   function syncCountryChips() {
     document.querySelectorAll(".analytics-country-chip").forEach((btn) => {
+      if (btn.dataset.action === "toggle-more") return;
       btn.classList.toggle(
         "analytics-genre-chip--active",
         selectedCountries.has(btn.dataset.country)
       );
     });
+    const moreBtn = document.querySelector(".analytics-country-chip--more");
+    if (!moreBtn) return;
+    const { more } = splitCountriesForDisplay(countriesInPeriod());
+    const moreSelected = more.filter((c) => selectedCountries.has(c)).length;
+    moreBtn.classList.toggle("analytics-country-chip--more-open", countryMoreExpanded);
+    moreBtn.classList.toggle("analytics-genre-chip--active", moreSelected > 0);
+    moreBtn.setAttribute("aria-expanded", countryMoreExpanded ? "true" : "false");
+    moreBtn.textContent = `更多國家 (${more.length})${moreSelected ? ` · 已選 ${moreSelected}` : ""}`;
   }
 
-  function initCountryPickerEvents() {
-    document.getElementById("country-preset-top8").onclick = () => {
-      selectedCountries = new Set(topCountriesInPeriod(8));
-      syncCountryChips();
-      renderCountryChart();
-      renderCountryDetail();
-    };
-    document.getElementById("country-select-all").onclick = () => {
-      selectedCountries = new Set(countriesInPeriod());
-      syncCountryChips();
-      renderCountryChart();
-      renderCountryDetail();
-    };
-    document.getElementById("country-clear-all").onclick = () => {
-      const top = topCountriesInPeriod(1);
-      selectedCountries = new Set(top.length ? top : countriesInPeriod().slice(0, 1));
+  function bindCountryChip(btn) {
+    if (btn.dataset.action === "toggle-more") {
+      btn.onclick = () => {
+        countryMoreExpanded = !countryMoreExpanded;
+        syncCountryChips();
+        const panel = document.getElementById("country-picker-more");
+        if (panel) panel.hidden = !countryMoreExpanded;
+      };
+      return;
+    }
+    btn.onclick = () => {
+      const c = btn.dataset.country;
+      if (selectedCountries.has(c)) {
+        if (selectedCountries.size <= 1) return;
+        selectedCountries.delete(c);
+      } else {
+        selectedCountries.add(c);
+      }
       syncCountryChips();
       renderCountryChart();
       renderCountryDetail();
@@ -1623,27 +1640,61 @@
       return;
     }
 
-    wrap.innerHTML = countries
-      .map((c, i) => {
-        const active = selectedCountries.has(c) ? " analytics-genre-chip--active" : "";
-        return `<button type="button" class="analytics-genre-chip analytics-country-chip${active}" data-country="${c}" style="--chip-color:${countryColor(c, i)}">${c}</button>`;
-      })
-      .join("");
+    const { primary, more } = splitCountriesForDisplay(countries);
+    const moreSelected = more.filter((c) => selectedCountries.has(c)).length;
+    if (moreSelected > 0) countryMoreExpanded = true;
 
-    wrap.querySelectorAll(".analytics-country-chip").forEach((btn) => {
-      btn.onclick = () => {
-        const c = btn.dataset.country;
-        if (selectedCountries.has(c)) {
-          if (selectedCountries.size <= 1) return;
-          selectedCountries.delete(c);
-        } else {
-          selectedCountries.add(c);
-        }
-        syncCountryChips();
-        renderCountryChart();
-        renderCountryDetail();
-      };
-    });
+    const chipHtml = (c, i) => {
+      const active = selectedCountries.has(c) ? " analytics-genre-chip--active" : "";
+      return `<button type="button" class="analytics-genre-chip analytics-country-chip${active}" data-country="${escapeHtml(c)}" style="--chip-color:${countryColor(c, i)}">${escapeHtml(c)}</button>`;
+    };
+
+    const moreBtn =
+      more.length > 0
+        ? `<button type="button" class="analytics-genre-chip analytics-country-chip analytics-country-chip--more${
+            countryMoreExpanded ? " analytics-country-chip--more-open" : ""
+          }${moreSelected ? " analytics-genre-chip--active" : ""}" data-action="toggle-more" aria-expanded="${
+            countryMoreExpanded ? "true" : "false"
+          }">更多國家 (${more.length})${moreSelected ? ` · 已選 ${moreSelected}` : ""}</button>`
+        : "";
+
+    const morePanel =
+      more.length > 0
+        ? `<div class="analytics-country-more" id="country-picker-more" role="group" aria-label="更多國別"${
+            countryMoreExpanded ? "" : " hidden"
+          }>${more.map((c, i) => chipHtml(c, primary.length + i)).join("")}</div>`
+        : "";
+
+    wrap.innerHTML = `
+      <div class="analytics-country-primary">${primary.map(chipHtml).join("")}${moreBtn}</div>
+      ${morePanel}`;
+
+    wrap.querySelectorAll(".analytics-country-chip").forEach(bindCountryChip);
+  }
+
+  function initCountryPickerEvents() {
+    document.getElementById("country-preset-top8").onclick = () => {
+      selectedCountries = new Set(topCountriesInPeriod(8));
+      countryMoreExpanded = false;
+      renderCountryPicker();
+      renderCountryChart();
+      renderCountryDetail();
+    };
+    document.getElementById("country-select-all").onclick = () => {
+      selectedCountries = new Set(countriesInPeriod());
+      countryMoreExpanded = true;
+      renderCountryPicker();
+      renderCountryChart();
+      renderCountryDetail();
+    };
+    document.getElementById("country-clear-all").onclick = () => {
+      const top = topCountriesInPeriod(1);
+      selectedCountries = new Set(top.length ? top : countriesInPeriod().slice(0, 1));
+      countryMoreExpanded = false;
+      renderCountryPicker();
+      renderCountryChart();
+      renderCountryDetail();
+    };
   }
 
   function initCountryYearSelect() {
