@@ -64,7 +64,7 @@
                     ? `平均票價：${ctx.parsed.y.toLocaleString()} 元／張`
                     : "平均票價：—";
                 }
-                return `總票房：${ctx.parsed.y.toLocaleString()} 萬元`;
+                return `總票房：${window.BCR_FILTER?.formatBoxOffice?.(ctx.parsed.y) ?? `${ctx.parsed.y.toLocaleString()} 萬`}`;
               },
               afterBody(items) {
                 const row = list[items[0].dataIndex];
@@ -89,11 +89,14 @@
           y: {
             title: {
               display: true,
-              text: "總票房 / 萬元",
+              text: "總票房",
               color: "#b0bec5",
               font: { family: "'Noto Sans TC', sans-serif", size: 11 },
             },
-            ticks: { color: "#8b9cb0" },
+            ticks: {
+              color: "#8b9cb0",
+              callback: (v) => window.BCR_FILTER?.formatBoxOfficeAxis?.(v) ?? v,
+            },
             grid: { color: "rgba(255,255,255,0.06)" },
           },
           y1: {

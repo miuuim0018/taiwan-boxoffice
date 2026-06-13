@@ -102,6 +102,36 @@
     return [...map.values()].map(({ _peakValue, ...rest }) => rest);
   }
 
+  const WAN_PER_YI = 10000;
+
+  /** 票房顯示：≥1 億（10000 萬）改為「X 億」 */
+  function formatBoxOffice(valueInWan) {
+    const n = Number(valueInWan);
+    if (!Number.isFinite(n)) return "—";
+    const abs = Math.abs(n);
+    if (abs >= WAN_PER_YI) {
+      const yi = n / WAN_PER_YI;
+      if (yi >= 100) return `${Math.round(yi).toLocaleString()} 億`;
+      const digits = yi >= 10 ? 1 : 2;
+      const text = yi.toFixed(digits).replace(/\.?0+$/, "");
+      return `${text} 億`;
+    }
+    return `${Math.round(n).toLocaleString()} 萬`;
+  }
+
+  /** 圖表座標軸用（較短） */
+  function formatBoxOfficeAxis(valueInWan) {
+    const n = Number(valueInWan);
+    if (!Number.isFinite(n)) return "";
+    if (Math.abs(n) >= WAN_PER_YI) {
+      const yi = n / WAN_PER_YI;
+      if (yi >= 10) return `${Math.round(yi)}億`;
+      return `${yi.toFixed(1).replace(/\.0$/, "")}億`;
+    }
+    if (n >= 1000) return `${Math.round(n / 1000)}千萬`;
+    return String(Math.round(n));
+  }
+
   function escapeAttr(text) {
     return String(text).replace(/"/g, "&quot;");
   }
@@ -251,6 +281,8 @@
     matchesCountries,
     formatCountryFilterNote,
     mergeMoviesByName,
+    formatBoxOffice,
+    formatBoxOfficeAxis,
     CountryMultiSelect,
   };
 })(typeof window !== "undefined" ? window : globalThis);

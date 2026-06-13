@@ -28,6 +28,7 @@
   let ratingQuadrantStats = null;
   let ratingCountryPicker = null;
   let ratingTrendCountries = new Set();
+  let ratingTrendMoreExpanded = false;
 
   const QUADRANT_META = {
     niche: { label: "叫好不叫座", note: "低票房 · 高評分", sort: (a, b) => b.y - a.y || b.x - a.x },
@@ -36,7 +37,7 @@
     hit: { label: "高票房低口碑", note: "高票房 · 低評分", sort: (a, b) => b.x - a.x || a.y - b.y },
   };
 
-  const { sortCountries, matchesCountries, CountryMultiSelect, PRIORITY_COUNTRIES, splitCountriesForDisplay, mergeMoviesByName } =
+  const { sortCountries, matchesCountries, CountryMultiSelect, PRIORITY_COUNTRIES, splitCountriesForDisplay, mergeMoviesByName, formatBoxOffice, formatBoxOfficeAxis } =
     window.BCR_FILTER;
   const {
     buildScatterPoints,
@@ -169,9 +170,9 @@
           <div class="month-bar-wrap">
             <div class="month-bar" style="width:${Math.max(4, pct)}%;background:#5ba3f5"></div>
           </div>
-          <span class="analytics-meta">${p.x.toLocaleString()} 萬 · TMDB ${p.y.toFixed(1)}</span>
+          <span class="analytics-meta">${formatBoxOffice(p.x)} · TMDB ${p.y.toFixed(1)}</span>
         </div>
-        <div class="rating-modal-metric">${p.x.toLocaleString()}<small> 萬</small></div>
+        <div class="rating-modal-metric">${formatBoxOffice(p.x)}</div>
       </div>`;
   }
 
@@ -225,7 +226,7 @@
       <div class="rating-intro-card rating-intro-card--modal">${buildRatingIntroBlock(name, boxOffice, rating, false)}</div>`;
     openRatingModal(
       title,
-      `${boxOffice.toLocaleString()} 萬 · TMDB ${rating.toFixed(1)} 分`,
+      `${formatBoxOffice(boxOffice)} · TMDB ${rating.toFixed(1)} 分`,
       bodyHtml
     );
   }
@@ -259,7 +260,7 @@
       tags.push(`<span class="champ-info-tag champ-info-tag--rating">TMDB ${rating.toFixed(1)}</span>`);
     }
     if (boxOffice != null) {
-      tags.push(`<span class="champ-info-tag">${boxOffice.toLocaleString()} 萬</span>`);
+      tags.push(`<span class="champ-info-tag">${formatBoxOffice(boxOffice)}</span>`);
     }
     if (meta.runtime > 0) {
       tags.push(`<span class="champ-info-tag">${meta.runtime} 分鐘</span>`);
@@ -326,7 +327,7 @@
           label(ctx) {
             const raw = ctx.raw || {};
             const name = raw.name ? ratingShortName(raw.name) : "";
-            return `${name}：${ctx.parsed.x.toLocaleString()} 萬 · ${ctx.parsed.y.toFixed(1)} 分`;
+            return `${name}：${formatBoxOffice(ctx.parsed.x)} · ${ctx.parsed.y.toFixed(1)} 分`;
           },
         },
       };
@@ -1157,14 +1158,47 @@
       wrap.innerHTML = '<p class="analytics-meta">尚無國別資料</p>';
       return;
     }
-    wrap.innerHTML = countries
-      .map((c, i) => {
-        const active = ratingTrendCountries.has(c) ? " analytics-genre-chip--active" : "";
-        return `<button type="button" class="analytics-genre-chip rating-trend-chip${active}" data-country="${escapeHtml(c)}" style="--chip-color:${countryColor(c, i)}">${escapeHtml(c)}</button>`;
-      })
-      .join("");
+
+    const { primary, more } = splitCountriesForDisplay(countries);
+    const moreSelected = more.filter((c) => ratingTrendCountries.has(c)).length;
+    if (moreSelected > 0) ratingTrendMoreExpanded = true;
+
+    const chipHtml = (c, i) => {
+      const active = ratingTrendCountries.has(c) ? " analytics-genre-chip--active" : "";
+      return `<button type="button" class="analytics-genre-chip rating-trend-chip${active}" data-country="${escapeHtml(c)}" style="--chip-color:${countryColor(c, i)}">${escapeHtml(c)}</button>`;
+    };
+
+    const moreBtn =
+      more.length > 0
+        ? `<button type="button" class="analytics-genre-chip rating-trend-chip analytics-country-chip--more${
+            ratingTrendMoreExpanded ? " analytics-country-chip--more-open" : ""
+          }${moreSelected ? " analytics-genre-chip--active" : ""}" data-action="toggle-more" aria-expanded="${
+            ratingTrendMoreExpanded ? "true" : "false"
+          }">更多國家 (${more.length})${moreSelected ? ` · 已選 ${moreSelected}` : ""}</button>`
+        : "";
+
+    const morePanel =
+      more.length > 0
+        ? `<div class="analytics-country-more" id="rating-trend-picker-more" role="group" aria-label="更多國別"${
+            ratingTrendMoreExpanded ? "" : " hidden"
+          }>${more.map((c, i) => chipHtml(c, primary.length + i)).join("")}</div>`
+        : "";
+
+    wrap.innerHTML = `
+      <div class="analytics-country-primary">${primary.map(chipHtml).join("")}${moreBtn}</div>
+      ${morePanel}`;
 
     wrap.querySelectorAll(".rating-trend-chip").forEach((btn) => {
+      if (btn.dataset.action === "toggle-more") {
+        btn.onclick = () => {
+          ratingTrendMoreExpanded = !ratingTrendMoreExpanded;
+          btn.classList.toggle("analytics-country-chip--more-open", ratingTrendMoreExpanded);
+          btn.setAttribute("aria-expanded", ratingTrendMoreExpanded ? "true" : "false");
+          const panel = document.getElementById("rating-trend-picker-more");
+          if (panel) panel.hidden = !ratingTrendMoreExpanded;
+        };
+        return;
+      }
       btn.onclick = () => {
         const c = btn.dataset.country;
         if (ratingTrendCountries.has(c)) ratingTrendCountries.delete(c);
@@ -1333,7 +1367,7 @@
       const list = rows
         .map(
           (p) =>
-            `<li><button type="button" class="rating-outlier-item" data-quadrant="${quadrantKey}" data-name="${escapeHtml(p.name)}"><strong>${ratingShortName(p.name)}</strong> · ${p.x.toLocaleString()} 萬 · ${p.y.toFixed(1)} 分</button></li>`
+            `<li><button type="button" class="rating-outlier-item" data-quadrant="${quadrantKey}" data-name="${escapeHtml(p.name)}"><strong>${ratingShortName(p.name)}</strong> · ${formatBoxOffice(p.x)} · ${p.y.toFixed(1)} 分</button></li>`
         )
         .join("");
       return `<div class="rating-outlier-col"><h4>${title}</h4><p class="analytics-meta">${note}</p><ul class="rating-outlier-list">${list}</ul></div>`;
@@ -1363,8 +1397,8 @@
   }
 
   function renderRatingStats(scopeLabel, points, minValue, maxValue, r, stats) {
-    const minNote = minValue ? `≥ ${minValue.toLocaleString()} 萬` : "不限";
-    const maxNote = maxValue ? `≤ ${maxValue.toLocaleString()} 萬` : "不限";
+    const minNote = minValue ? `≥ ${formatBoxOffice(minValue)}` : "不限";
+    const maxNote = maxValue ? `≤ ${formatBoxOffice(maxValue)}` : "不限";
     const rangeNote =
       minValue || maxValue ? `${minNote} · ${maxNote}` : "不限";
     const countrySel = ratingCountryPicker?.getSelected();
@@ -1378,7 +1412,7 @@
       { label: "票房區間", value: rangeNote },
       { label: "國別", value: countryNote },
       { label: "相關係數", value: r != null ? `r = ${r.toFixed(2)}` : "—" },
-      { label: "票房中位", value: `${Math.round(stats.mx).toLocaleString()} 萬` },
+      { label: "票房中位", value: formatBoxOffice(Math.round(stats.mx)) },
       { label: "評分中位", value: stats.my.toFixed(1) },
     ]);
   }
@@ -1479,11 +1513,14 @@
           x: {
             title: {
               display: true,
-              text: "票房（萬元）",
+              text: "票房",
               color: "#8b9cb0",
               font: { family: "'Noto Sans TC', sans-serif" },
             },
-            ticks: { color: "#8b9cb0" },
+            ticks: {
+              color: "#8b9cb0",
+              callback: (v) => formatBoxOfficeAxis(v),
+            },
             grid: { color: "rgba(255,255,255,0.06)" },
             min: xMin,
           },
@@ -1938,13 +1975,13 @@
     document.getElementById("rating-rank-modal-backdrop").onclick = closeRatingModal;
     document.getElementById("rating-trend-preset").onclick = () => {
       ratingTrendCountries = new Set(defaultTrendCountries(allRatingCountries()));
-      syncRatingTrendChips();
+      ratingTrendMoreExpanded = false;
       renderCountryRatingChart();
     };
     document.getElementById("rating-trend-clear").onclick = () => {
       const available = allRatingCountries();
       ratingTrendCountries = new Set(available.slice(0, 1));
-      syncRatingTrendChips();
+      ratingTrendMoreExpanded = false;
       renderCountryRatingChart();
     };
     initGenrePicker();
