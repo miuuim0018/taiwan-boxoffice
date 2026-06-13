@@ -218,6 +218,23 @@
             <option value="10000">1 億以上</option>
           </select>
         </label>
+        <label>
+          最高票房
+          <select id="rating-max-value">
+            <option value="0" selected>不限</option>
+            <option value="50">50 萬以下</option>
+            <option value="100">100 萬以下</option>
+            <option value="200">200 萬以下</option>
+            <option value="300">300 萬以下</option>
+            <option value="500">500 萬以下</option>
+            <option value="800">800 萬以下</option>
+            <option value="1000">1000 萬以下</option>
+            <option value="2000">2000 萬以下</option>
+            <option value="3000">3000 萬以下</option>
+            <option value="5000">5000 萬以下</option>
+            <option value="10000">1 億以下</option>
+          </select>
+        </label>
         <button type="button" class="analytics-toggle-btn" id="rating-intro-toggle" aria-pressed="false">
           顯示電影介紹
         </button>
@@ -227,7 +244,7 @@
         <p class="analytics-filter-heading">國別篩選（散佈圖）</p>
         <div id="rating-country-picker"></div>
       </div>
-      <p class="analytics-lead">點散佈圖圓點或象限卡，查看票房排名、海報與介紹。</p>
+      <p class="analytics-lead">點散佈圖圓點或象限卡，查看票房排名、海報與介紹。篩選低票房片：最低票房選「不限」、最高票房設上限（如 500 萬以下）。</p>
       <div class="analytics-stat-row" id="rating-stats"></div>
       <div class="rating-quadrant-grid" id="rating-quadrants"></div>
       <div class="rating-chart-shell">
