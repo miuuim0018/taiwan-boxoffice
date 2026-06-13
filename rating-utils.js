@@ -124,4 +124,13 @@
   }
 
   global.BCR_RATING = {
-    attachRati
+    attachRating,
+    sortByRating,
+    pearsonR,
+    median,
+    buildScatterPoints,
+    quadrantStats,
+    interpretCorrelation,
+    shortName,
+  };
+})(typeof window !== "undefined" ? window : globalThis);

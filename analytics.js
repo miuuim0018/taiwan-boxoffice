@@ -1356,8 +1356,11 @@
     });
   }
 
-  function renderRatingStats(scopeLabel, points, minValue, r, stats) {
+  function renderRatingStats(scopeLabel, points, minValue, maxValue, r, stats) {
     const minNote = minValue ? `≥ ${minValue.toLocaleString()} 萬` : "不限";
+    const maxNote = maxValue ? `≤ ${maxValue.toLocaleString()} 萬` : "不限";
+    const rangeNote =
+      minValue || maxValue ? `${minNote} · ${maxNote}` : "不限";
     const countrySel = ratingCountryPicker?.getSelected();
     const countryNote =
       countrySel?.size > 0
@@ -1366,7 +1369,7 @@
     renderAnalyticsStatRow("rating-stats", [
       { label: "時段", value: scopeLabel },
       { label: "樣本", value: `${points.length} 部` },
-      { label: "票房門檻", value: minNote },
+      { label: "票房區間", value: rangeNote },
       { label: "國別", value: countryNote },
       { label: "相關係數", value: r != null ? `r = ${r.toFixed(2)}` : "—" },
       { label: "票房中位", value: `${Math.round(stats.mx).toLocaleString()} 萬` },
@@ -1377,8 +1380,9 @@
   function renderRatingPanel() {
     if (!yearlyRankings) return;
     const minValue = parseInt(document.getElementById("rating-min-value")?.value || "0", 10) || 0;
+    const maxValue = parseInt(document.getElementById("rating-max-value")?.value || "0", 10) || 0;
     const movies = moviesForRatingScope(ratingScope);
-    const points = buildScatterPoints(movies, movieMeta, minValue);
+    const points = buildScatterPoints(movies, movieMeta, minValue, maxValue);
     const r = pearsonR(points);
     const stats = quadrantStats(points);
     const scopeLabel =
@@ -1386,7 +1390,7 @@
         ? `歷年 ${(yearlyRankings.years || []).length} 個年度`
         : `${ratingScope} 年`;
 
-    renderRatingStats(scopeLabel, points, minValue, r, stats);
+    renderRatingStats(scopeLabel, points, minValue, maxValue, r, stats);
     const corrNote = document.getElementById("rating-correlation-note");
     if (corrNote) corrNote.textContent = interpretCorrelation(r);
     renderRatingQuadrants(stats, points.length);
@@ -1871,6 +1875,7 @@
       renderRatingPanel();
     };
     document.getElementById("rating-min-value").onchange = renderRatingPanel;
+    document.getElementById("rating-max-value").onchange = renderRatingPanel;
     syncRatingIntroToggle();
     document.getElementById("rating-intro-toggle").onclick = () => {
       ratingShowIntro = !ratingShowIntro;
