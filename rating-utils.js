@@ -53,7 +53,9 @@
   }
 
   function buildScatterPoints(items, movieMeta, minValue = 0, maxValue = 0) {
-    return attachRating(items, movieMeta)
+    const merge = global.BCR_FILTER?.mergeMoviesByName;
+    const merged = merge ? merge(items) : items || [];
+    return attachRating(merged, movieMeta)
       .filter((item) => {
         if (item.rating == null) return false;
         const value = item.value || 0;

@@ -329,11 +329,15 @@ class BarChartRace {
 
   _formatValue(n) {
     const v = Math.max(0, n);
+    const fmt = typeof window !== "undefined" && window.BCR_FILTER?.formatBoxOffice;
+    if (fmt) return fmt(v);
     return Math.round(v).toLocaleString() + this.valueSuffix;
   }
 
   _formatValueAnimated(n) {
     const v = Math.max(0, n);
+    const fmt = typeof window !== "undefined" && window.BCR_FILTER?.formatBoxOffice;
+    if (fmt) return fmt(Math.floor(v));
     return Math.floor(v).toLocaleString() + this.valueSuffix;
   }
 

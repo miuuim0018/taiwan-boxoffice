@@ -18,10 +18,10 @@
       label: "票房最高",
       sortKey: "value",
       tieKey: "tickets",
-      head: "全年票房（萬元）",
+      head: "全年票房",
       subtitle: "全年週票房加總最高",
-      metric(item, suffix) {
-        return `${item.value.toLocaleString()}<small>${suffix}</small>`;
+      metric(item) {
+        return boText(item.value);
       },
       sub(item, suffix) {
         const parts = [];
@@ -35,7 +35,7 @@
         return item ? shortName(item.name) : "—";
       },
       summaryExtra(item, suffix) {
-        return item ? `${item.value.toLocaleString()} ${suffix}` : "—";
+        return item ? boText(item.value) : "—";
       },
     },
     longestRun: {
@@ -48,7 +48,7 @@
         return `${item.weeks}<small> 週</small>`;
       },
       sub(item, suffix) {
-        return `<span class="champ-tickets">票房 ${item.value.toLocaleString()} ${suffix}</span>`;
+        return `<span class="champ-tickets">票房 ${boText(item.value)}</span>`;
       },
       summaryTop(item) {
         return item ? shortName(item.name) : "—";
@@ -69,7 +69,7 @@
       sub(item, suffix) {
         const crown =
           item.crownWeeks > 0 ? `共 ${item.crownWeeks} 週奪冠 · ` : "";
-        return `<span class="champ-tickets">${crown}票房 ${item.value.toLocaleString()} ${suffix}</span>`;
+        return `<span class="champ-tickets">${crown}票房 ${boText(item.value)}</span>`;
       },
       summaryTop(item) {
         return item ? shortName(item.name) : "—";
@@ -89,7 +89,7 @@
       },
       sub(item, suffix) {
         const streak = item.streak > 0 ? `最長連冠 ${item.streak} 週 · ` : "";
-        return `<span class="champ-tickets">${streak}票房 ${item.value.toLocaleString()} ${suffix}</span>`;
+        return `<span class="champ-tickets">${streak}票房 ${boText(item.value)}</span>`;
       },
       summaryTop(item) {
         return item ? shortName(item.name) : "—";
@@ -108,7 +108,7 @@
         return `${item.rating.toFixed(1)}<small> / 10</small>`;
       },
       sub(item, suffix) {
-        return `<span class="champ-tickets">票房 ${item.value.toLocaleString()} ${suffix}</span>`;
+        return `<span class="champ-tickets">票房 ${boText(item.value)}</span>`;
       },
       summaryTop(item) {
         return item ? shortName(item.name) : "—";
@@ -128,8 +128,12 @@
   let selectedMovieName = null;
   let countryPicker = null;
 
-  const { matchesCountries, formatCountryFilterNote, CountryMultiSelect, collectCountries, collectGenres, mergeMoviesByName } =
+  const { matchesCountries, formatCountryFilterNote, CountryMultiSelect, collectCountries, collectGenres, mergeMoviesByName, formatBoxOffice } =
     window.BCR_FILTER;
+
+  function boText(value) {
+    return formatBoxOffice(value);
+  }
   const { attachRating } = window.BCR_RATING;
 
   async function loadRankings() {
@@ -549,7 +553,7 @@
             ${posterHtml(item.name)}
             <div class="champ-champion-title" title="${item.name}">${shortName(item.name)}</div>
             ${tagHtml(item)}
-            <div class="champ-champion-value">${item.value.toLocaleString()} ${suffix}</div>
+            <div class="champ-champion-value">${boText(item.value)}</div>
             <div class="champ-champion-hint">點擊查看 Top ${DETAIL_TOP_N}</div>
           </article>`;
       })

@@ -37,7 +37,11 @@
   let countryPicker = null;
   let selectedMovieName = null;
 
-  const { matchesCountries, CountryMultiSelect, collectCountries, collectGenres } = window.BCR_FILTER;
+  const { matchesCountries, CountryMultiSelect, collectCountries, collectGenres, formatBoxOffice } = window.BCR_FILTER;
+
+  function boText(value) {
+    return formatBoxOffice(value);
+  }
   const { attachRating, sortByRating } = window.BCR_RATING;
 
   const PIE_COLORS = [
@@ -302,7 +306,7 @@
   function updateStats(items) {
     const suffix = payload.valueSuffix || " 萬";
     const total = items.reduce((s, i) => s + i.value, 0);
-    document.getElementById("stat-total").textContent = total.toLocaleString() + suffix.trim();
+    document.getElementById("stat-total").textContent = boText(total);
     document.getElementById("stat-top").textContent = items[0]?.name || "—";
     document.getElementById("stat-count").textContent = String(items.length);
   }
@@ -350,11 +354,11 @@
         const metric =
           mode === "rating"
             ? `${item.rating.toFixed(1)}<small> / 10</small>`
-            : `${item.value.toLocaleString()}<small>${suffix.trim()}</small>`;
+            : boText(item.value);
         const barColor = mode === "rating" ? "linear-gradient(90deg,#ffd54f,#ffb300)" : barBg(rank);
         const subLine =
           mode === "rating"
-            ? `<span class="month-tickets">票房 ${item.value.toLocaleString()}${suffix.trim()}</span>`
+            ? `<span class="month-tickets">票房 ${boText(item.value)}</span>`
             : "";
         const clickCls = clickable ? " month-row--clickable" : "";
         const selectedCls =
@@ -446,7 +450,7 @@
     document.getElementById("month-pie-detail-title").textContent =
       `${currentPieLabel} · ${country}`;
     document.getElementById("month-pie-detail-note").textContent =
-      `共 ${movies.length} 部｜合計 ${total.toLocaleString()} ${suffix}${share ? `（占當月 ${share}%）` : ""}`;
+      `共 ${movies.length} 部｜合計 ${boText(total)}${share ? `（占當月 ${share}%）` : ""}`;
 
     renderCountryMovieList(movies, "month-pie-detail-list");
     const panel = document.getElementById("month-pie-detail");
@@ -538,7 +542,7 @@
               <span class="month-pie-swatch" style="background:${color}"></span>
               <strong>${row.country}</strong>
             </div>
-            <span>${row.value.toLocaleString()}${suffix.trim()} · ${pct}%</span>
+            <span>${boText(row.value)} · ${pct}%</span>
           </button>`;
       })
       .join("");
@@ -613,7 +617,7 @@
             callbacks: {
               label(ctx) {
                 if (ctx.dataset.yAxisID === "y1") {
-                  return `銷售金額：${ctx.parsed.y.toLocaleString()} 萬元`;
+                  return `銷售金額：${boText(ctx.parsed.y)}`;
                 }
                 return `銷售票數：${ctx.parsed.y.toLocaleString()} 張`;
               },
