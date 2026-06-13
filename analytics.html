@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>票房深度分析 — 爛片現形鏡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="bar-race.css" />
+</head>
+<body class="bcr-page bcr-page--monthly">
+  <div class="bcr-wrap bcr-wrap--wide">
+    <nav class="bcr-nav">
+      <a class="bcr-nav-link" href="home.html">總覽</a>
+      <a class="bcr-nav-link" href="index.html">排行榜動畫</a>
+      <a class="bcr-nav-link" href="monthly.html">月票房長條圖</a>
+      <a class="bcr-nav-link" href="champions.html">年度排行</a>
+      <a class="bcr-nav-link bcr-nav-link--active" href="analytics.html">票房分析</a>
+      <a class="bcr-nav-link" href="about.html">資料說明</a>
+    </nav>
+
+    <header class="champ-hero">
+      <p class="month-hero-kicker">官方每週票房 · 深度分析</p>
+      <h1>票房深度分析</h1>
+      <p class="bcr-coverage" id="analytics-subtitle">載入中…</p>
+    </header>
+
+    <div class="analytics-tabs" id="analytics-tabs">
+      <button type="button" class="analytics-tab analytics-tab--active" data-panel="film">單片走勢</button>
+      <button type="button" class="analytics-tab" data-panel="duel">同週對決</button>
+      <button type="button" class="analytics-tab" data-panel="season">賀歲／暑假檔</button>
+      <button type="button" class="analytics-tab" data-panel="domestic">國片占比</button>
+      <button type="button" class="analytics-tab" data-panel="genre">片種熱度</button>
+      <button type="button" class="analytics-tab" data-panel="country">國別票房</button>
+      <button type="button" class="analytics-tab" data-panel="rating">票房 vs 評分</button>
+    </div>
+
+    <!-- 單片走勢 -->
+    <section class="analytics-panel" id="panel-film">
+      <div class="analytics-toolbar">
+        <label class="analytics-search-wrap">
+          搜尋電影
+          <input type="search" id="film-search" placeholder="輸入片名，例如：復仇者" autocomplete="off" />
+          <div class="analytics-suggest" id="film-suggest" hidden></div>
+        </label>
+        <label>
+          金額模式
+          <select id="film-mode">
+            <option value="week">週票房</option>
+            <option value="cumulative">累計票房</option>
+          </select>
+        </label>
+        <button type="button" class="bcr-btn-primary" id="film-go">顯示走勢</button>
+      </div>
+      <p class="analytics-meta" id="film-meta"></p>
+      <div class="analytics-canvas-wrap">
+        <canvas id="film-chart"></canvas>
+      </div>
+    </section>
+
+    <!-- 同週對決 -->
+    <section class="analytics-panel" id="panel-duel" hidden>
+      <div class="analytics-toolbar">
+        <label class="analytics-search-wrap">
+          電影 A
+          <input type="search" id="duel-a" placeholder="第一部片" autocomplete="off" />
+          <div class="analytics-suggest" id="duel-suggest-a" hidden></div>
+        </label>
+        <label class="analytics-search-wrap">
+          電影 B
+          <input type="search" id="duel-b" placeholder="第二部片" autocomplete="off" />
+          <div class="analytics-suggest" id="duel-suggest-b" hidden></div>
+        </label>
+        <button type="button" class="bcr-btn-primary" id="duel-go">開始對決</button>
+        <label>
+          金額模式
+          <select id="duel-value-mode">
+            <option value="week">週票房</option>
+            <option value="cumulative">累計票房</option>
+          </select>
+        </label>
+      </div>
+      <p class="analytics-lead">以上映第 1 週起算並排比較兩片走勢；滑鼠移到圖上可見各週實際日期。</p>
+      <p class="analytics-meta" id="duel-meta"></p>
+      <div class="analytics-canvas-wrap">
+        <canvas id="duel-chart"></canvas>
+      </div>
+      <details class="analytics-help">
+        <summary>如何解讀</summary>
+        <p class="analytics-help-body">並排比較兩片從首映到下片的週票房／累計票房與售票數；橫軸為「上映第 N 週」，非日曆週次。</p>
+      </details>
+    </section>
+
+    <!-- 檔期專題 -->
+    <section class="analytics-panel" id="panel-season" hidden>
+      <div class="analytics-toolbar">
+        <div class="analytics-toggle">
+          <button type="button" class="analytics-toggle-btn analytics-toggle-btn--active" data-season="spring">春節檔（1–2月）</button>
+          <button type="button" class="analytics-toggle-btn" data-season="summer">暑假檔（7–8月）</button>
+        </div>
+      </div>
+      <p class="analytics-lead" id="season-lead">各年檔期國片占比與總票房；點長條或下方年份可查看該年明細。</p>
+      <p class="analytics-meta" id="season-note"></p>
+      <div class="analytics-canvas-wrap analytics-canvas-wrap--short">
+        <canvas id="season-chart"></canvas>
+      </div>
+      <div class="champ-year-nav analytics-season-years" id="season-year-nav"></div>
+      <div class="analytics-season-detail" id="season-detail"></div>
+    </section>
+
+    <!-- 國片占比 -->
+    <section class="analytics-panel" id="panel-domestic" hidden>
+      <div class="analytics-toolbar">
+        <div class="analytics-toggle">
+          <button type="button" class="analytics-toggle-btn analytics-toggle-btn--active" data-period="monthly">每月</button>
+          <button type="button" class="analytics-toggle-btn" data-period="yearly">每年</button>
+        </div>
+      </div>
+      <p class="analytics-lead">台灣片占全台週票房比例；折線同時顯示金額占比與售票數占比。</p>
+      <div class="analytics-canvas-wrap">
+        <canvas id="domestic-chart"></canvas>
+      </div>
+      <details class="analytics-help">
+        <summary>如何解讀</summary>
+        <p class="analytics-help-body">國別欄位為「台灣」的電影，占當期全台週票房（金額）與售票數的比例；可切換每月或每年檢視趨勢。</p>
+      </details>
+    </section>
+
+    <!-- 片種熱度 -->
+    <section class="analytics-panel" id="panel-genre" hidden>
+      <div class="analytics-toolbar">
+        <div class="analytics-toggle">
+          <button type="button" class="analytics-toggle-btn analytics-toggle-btn--active" data-gperiod="monthly">每月</button>
+          <button type="button" class="analytics-toggle-btn" data-gperiod="yearly">每年</button>
+        </div>
+      </div>
+      <p class="analytics-lead">點選片種標籤決定顯示哪些類型；圖表為各片種占當期總票房比例（%）。</p>
+      <div class="analytics-genre-toolbar">
+        <div class="analytics-genre-actions">
+          <button type="button" class="analytics-preset-btn" id="genre-preset-top6">熱門前 6</button>
+          <button type="button" class="analytics-preset-btn" id="genre-select-all">全選</button>
+          <button type="button" class="analytics-preset-btn" id="genre-clear-all">全部取消</button>
+        </div>
+        <div class="analytics-genre-picker" id="genre-picker"></div>
+      </div>
+      <div class="analytics-canvas-wrap analytics-canvas-wrap--tall">
+        <canvas id="genre-chart"></canvas>
+      </div>
+      <details class="analytics-help">
+        <summary>如何解讀</summary>
+        <p class="analytics-help-body">Y 軸固定 0–100%。同一時段各片種占比加總可能超過 100%（一部片可有多個片種標籤）。建議先用「熱門前 6」避免線條過多。</p>
+      </details>
+    </section>
+
+    <!-- 國別票房 -->
+    <section class="analytics-panel" id="panel-country" hidden>
+      <div class="analytics-filter-section">
+        <p class="analytics-filter-heading">時間範圍</p>
+        <div class="analytics-toolbar analytics-toolbar--compact">
+          <div class="analytics-toggle">
+            <button type="button" class="analytics-toggle-btn analytics-toggle-btn--active" data-cperiod="monthly">每月</button>
+            <button type="button" class="analytics-toggle-btn" data-cperiod="yearly">每年</button>
+          </div>
+          <label>
+            年份
+            <select id="country-year"></select>
+          </label>
+        </div>
+        <div class="analytics-month-pills" id="country-month-pills"></div>
+      </div>
+
+      <div class="analytics-filter-section">
+        <p class="analytics-filter-heading">國別篩選</p>
+        <div class="analytics-genre-toolbar">
+          <div class="analytics-genre-actions">
+            <span class="analytics-country-picker-label" id="country-picker-label"></span>
+            <button type="button" class="analytics-preset-btn analytics-preset-btn--primary" id="country-preset-top8">主要 8 國</button>
+            <button type="button" class="analytics-preset-btn" id="country-select-all">全選</button>
+            <button type="button" class="analytics-preset-btn" id="country-clear-all">重設</button>
+          </div>
+          <div class="analytics-genre-picker" id="country-picker"></div>
+        </div>
+      </div>
+
+      <p class="analytics-lead">比較各國票房走勢；下方表格列出當期明細與代表作品。</p>
+      <div class="analytics-stat-row" id="country-stats"></div>
+      <div class="analytics-canvas-wrap analytics-canvas-wrap--short">
+        <canvas id="country-chart"></canvas>
+      </div>
+      <details class="analytics-help">
+        <summary>如何解讀</summary>
+        <p class="analytics-help-body">各國在當期週票房加總（萬元）。「代表作品」為該國當期票房最高單片。預設顯示主要 8 國，可再點 chip 增減。</p>
+      </details>
+      <div class="analytics-country-detail" id="country-detail"></div>
+    </section>
+
+    <!-- 票房 vs 評分 -->
+    <section class="analytics-panel" id="panel-rating" hidden>
+      <div class="analytics-toolbar">
+        <label>
+          時段
+          <select id="rating-scope"></select>
+        </label>
+        <label>
+          最低票房
+          <select id="rating-min-value">
+            <option value="0">不限</option>
+            <option value="50">50 萬以上</option>
+            <option value="100" selected>100 萬以上</option>
+            <option value="200">200 萬以上</option>
+            <option value="300">300 萬以上</option>
+            <option value="500">500 萬以上</option>
+            <option value="800">800 萬以上</option>
+            <option value="1000">1000 萬以上</option>
+            <option value="2000">2000 萬以上</option>
+            <option value="3000">3000 萬以上</option>
+            <option value="5000">5000 萬以上</option>
+            <option value="10000">1 億以上</option>
+          </select>
+        </label>
+        <button type="button" class="analytics-toggle-btn" id="rating-intro-toggle" aria-pressed="false">
+          顯示電影介紹
+        </button>
+      </div>
+
+      <div class="analytics-filter-section" id="rating-country-filter-wrap">
+        <p class="analytics-filter-heading">國別篩選（散佈圖）</p>
+        <div id="rating-country-picker"></div>
+      </div>
+      <p class="analytics-lead">點散佈圖圓點或象限卡，查看票房排名、海報與介紹。</p>
+      <div class="analytics-stat-row" id="rating-stats"></div>
+      <div class="rating-quadrant-grid" id="rating-quadrants"></div>
+      <div class="rating-chart-shell">
+        <div class="analytics-canvas-wrap analytics-canvas-wrap--tall">
+          <canvas id="rating-chart"></canvas>
+        </div>
+        <div class="rating-scatter-tooltip" id="rating-scatter-tooltip" hidden></div>
+      </div>
+      <details class="analytics-help">
+        <summary>如何解讀</summary>
+        <p class="analytics-help-body">
+          橫軸：該時段週票房加總（萬元）｜縱軸：TMDB 使用者評分（10 分制）。
+          虛線為中位數，將電影分成四象限；虛線右下為<strong>高票房、低評分</strong>（本專題「爛片現形」關注區）。
+          「顯示電影介紹」可開啟滑鼠移上散點時的海報預覽。
+        </p>
+        <p class="analytics-help-correlation" id="rating-correlation-note"></p>
+      </details>
+      <div class="rating-outlier-section" id="rating-outliers"></div>
+
+      <div class="rating-country-trend-section">
+        <h3 class="analytics-subsection-title">各國歷年平均 TMDB 評分</h3>
+        <p class="analytics-lead">各年度該國有 TMDB 評分之電影，取算術平均；可勾選多國比較走勢。</p>
+        <div class="analytics-genre-toolbar">
+          <div class="analytics-genre-actions">
+            <button type="button" class="analytics-preset-btn analytics-preset-btn--primary" id="rating-trend-preset">主要 8 國</button>
+            <button type="button" class="analytics-preset-btn" id="rating-trend-clear">重設</button>
+          </div>
+          <div class="analytics-genre-picker" id="rating-trend-picker"></div>
+        </div>
+        <p class="analytics-meta" id="rating-country-trend-meta"></p>
+        <div class="analytics-canvas-wrap analytics-canvas-wrap--short">
+          <canvas id="rating-country-chart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bcr-footer">
+      爛片現形鏡 專題延伸｜
+      <a href="index.html">返回排行榜動畫</a>
+      ｜資料來源：TFAI 官方統計
+    </footer>
+  </div>
+
+  <div class="champ-info-modal" id="rating-rank-modal" hidden>
+    <div class="champ-info-modal-backdrop" id="rating-rank-modal-backdrop"></div>
+    <div
+      class="champ-info-modal-panel champ-info-modal-panel--wide"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="rating-rank-modal-title"
+    >
+      <button type="button" class="champ-info-modal-close" id="rating-rank-modal-close" aria-label="關閉">×</button>
+      <p class="champ-info-kicker" id="rating-rank-modal-note"></p>
+      <h2 class="champ-info-title" id="rating-rank-modal-title"></h2>
+      <div id="rating-rank-modal-body"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="filter-utils.js"></script>
+  <script src="rating-utils.js"></script>
+  <script src="analytics.js"></script>
+</body>
+</html>

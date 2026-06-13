@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>台灣電影票房 Bar Chart Race — 爛片現形鏡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="bar-race.css" />
+
+</head>
+
+<body class="bcr-page">
+
+  <div class="bcr-wrap">
+
+    <nav class="bcr-nav">
+
+      <a class="bcr-nav-link" href="home.html">總覽</a>
+
+      <a class="bcr-nav-link bcr-nav-link--active" href="index.html">排行榜動畫</a>
+
+      <a class="bcr-nav-link" href="monthly.html">月票房長條圖</a>
+
+      <a class="bcr-nav-link" href="champions.html">年度排行</a>
+
+      <a class="bcr-nav-link" href="analytics.html">票房分析</a>
+
+      <a class="bcr-nav-link" href="about.html">資料說明</a>
+
+    </nav>
+
+
+
+    <header class="bcr-header">
+
+      <h1 id="bcr-title">載入中…</h1>
+
+      <p class="bcr-coverage" id="bcr-coverage"></p>
+
+    </header>
+
+
+
+    <div class="bcr-controls">
+
+      <label class="bcr-mode-label">
+
+        排行類型
+
+        <select id="bcr-mode"></select>
+
+      </label>
+
+      <button type="button" class="bcr-btn-primary" id="bcr-play">▶ 播放</button>
+
+      <button type="button" id="bcr-pause">⏸ 暫停</button>
+
+      <button type="button" id="bcr-reset">↺ 重播</button>
+
+      <button type="button" id="bcr-final">⏭ 最終結果</button>
+
+      <label class="bcr-speed-wrap">
+
+        <span id="bcr-speed-label">速度（秒/週）</span>
+
+        <input type="range" id="bcr-speed" min="0.02" max="3" step="0.02" value="0.25" aria-label="速度滑桿" />
+
+        <input
+          type="number"
+          id="bcr-speed-num"
+          class="bcr-speed-num"
+          min="0.02"
+          max="10"
+          step="0.01"
+          value="0.25"
+          aria-label="自訂速度（秒/週）"
+        />
+
+      </label>
+
+      <label>
+
+        顯示名次
+
+        <select id="bcr-topn">
+
+          <option value="12">Top 12</option>
+
+          <option value="20">Top 20</option>
+
+          <option value="50">Top 50</option>
+
+          <option value="100">Top 100</option>
+
+        </select>
+
+      </label>
+
+    </div>
+
+
+
+    <div class="bcr-timeline">
+
+      <div class="bcr-timeline-labels">
+
+        <span id="bcr-date-start">—</span>
+
+        <span id="bcr-date-current" class="bcr-date-current">—</span>
+
+        <span id="bcr-date-end">—</span>
+
+      </div>
+
+      <input type="range" id="bcr-scrub" class="bcr-scrub" min="0" max="1000" value="0" step="1" />
+
+      <div class="bcr-timeline-hint">拖曳進度條可跳至任意週次</div>
+
+    </div>
+
+
+
+    <div class="bcr-filters">
+
+      <label>
+
+        年份
+
+        <select id="bcr-year"><option value="all">全部年份</option></select>
+
+      </label>
+
+      <label>
+
+        起始週
+
+        <select id="bcr-range-start"><option value="">最早</option></select>
+
+      </label>
+
+      <label>
+
+        結束週
+
+        <select id="bcr-range-end"><option value="">最晚</option></select>
+
+      </label>
+
+      <div class="bcr-country-filter-wrap" id="bcr-country-wrap">
+
+        <span class="bcr-country-filter-title">國別（可多選）</span>
+
+        <div id="bcr-country-picker"></div>
+
+      </div>
+
+      <label id="bcr-genre-wrap">
+
+        片種
+
+        <select id="bcr-genre"><option value="all">全部片種</option></select>
+
+      </label>
+
+    </div>
+
+
+
+    <div class="bcr-stage">
+
+      <div id="bcr-chart"></div>
+
+    </div>
+
+
+
+    <footer class="bcr-footer">
+
+      爛片現形鏡 專題延伸｜
+
+      <a href="../output/index.html">返回主儀表板</a>
+
+      ｜海報 TMDB｜票房為政府官方統計
+
+    </footer>
+
+  </div>
+
+
+
+  <script src="bar-race.js"></script>
+
+  <script src="filter-utils.js"></script>
+
+  <script>
+
+    let race = null;
+
+    let payload = null;
+
+    let currentMode = null;
+
+    let scrubbing = false;
+
+    let countryPicker = null;
+
+    const { sortCountries, CountryMultiSelect, collectCountries, collectGenres } = window.BCR_FILTER;
+
+    const SPEED_MIN = 0.02;
+    const SPEED_SLIDER_MAX = 3;
+    const SPEED_INPUT_MAX = 10;
+
+    function clampSpeed(sec) {
+      if (Number.isNaN(sec)) return 0.25;
+      return Math.min(SPEED_INPUT_MAX, Math.max(SPEED_MIN, sec));
+    }
+
+    function getSpeedSec() {
+      const num = parseFloat(document.getElementById("bcr-speed-num").value);
+      if (!Number.isNaN(num)) return clampSpeed(num);
+      return clampSpeed(parseFloat(document.getElementById("bcr-speed").value));
+    }
+
+    function applySpeed(sec) {
+      const value = clampSpeed(sec);
+      const speedInput = document.getElementById("bcr-speed");
+      const speedNum = document.getElementById("bcr-speed-num");
+      speedInput.value = String(Math.min(SPEED_SLIDER_MAX, value));
+      speedNum.value = value.toFixed(2);
+      if (race) race.setSpeed(value * 1000);
+    }
+
+
+
+    async function loadData() {
+
+      const res = await fetch("data.json");
+
+      if (!res.ok) throw new Error("HTTP " + res.status);
+
+      return res.json();
+
+    }
+
+
+
+    function resolveMode(data, modeId) {
+
+      if (data.modes && data.modes[modeId]) return data.modes[modeId];
+
+      return {
+
+        label: "預設",
+
+        title: data.title || "排行榜",
+
+        subtitle: data.subtitle || "每日總量",
+
+        frames: data.frames || [],
+
+      };
+
+    }
+
+
+
+    function fillSelect(id, values, allLabel) {
+
+      const el = document.getElementById(id);
+
+      const current = el.value;
+
+      el.innerHTML = `<option value="all">${allLabel}</option>`;
+
+      values.forEach((v) => {
+
+        el.innerHTML += `<option value="${v}">${v}</option>`;
+
+      });
+
+      if (current !== "all" && values.includes(current)) el.value = current;
+
+    }
+
+
+
+    function getFilterOptions(mode, year, start, end) {
+
+      const countries = new Set();
+
+      const genres = new Set();
+
+      (mode.frames || []).forEach((f) => {
+
+        if (year !== "all" && !f.date.startsWith(year + "/")) return;
+
+        if (start && f.date < start) return;
+
+        if (end && f.date > end) return;
+
+        f.items.forEach((i) => {
+
+          if (i.country) countries.add(i.country);
+
+          if (i.genre) genres.add(i.genre);
+
+        });
+
+      });
+
+      return {
+
+        countries: sortCountries([...countries]),
+
+        genres: [...genres].sort(),
+
+      };
+
+    }
+
+
+
+    function refreshFilterSelects() {
+
+      const mode = resolveMode(payload, currentMode);
+
+      const year = document.getElementById("bcr-year").value;
+
+      const start = document.getElementById("bcr-range-start").value;
+
+      const end = document.getElementById("bcr-range-end").value;
+
+      const { countries, genres } = getFilterOptions(mode, year, start, end);
+
+
+
+      document.getElementById("bcr-country-wrap").style.display =
+
+        countries.length ? "" : "none";
+
+      document.getElementById("bcr-genre-wrap").style.display =
+
+        genres.length ? "" : "none";
+
+
+
+      if (countries.length && countryPicker) countryPicker.setCountries(countries);
+
+      if (genres.length) fillSelect("bcr-genre", genres, "全部片種");
+
+    }
+
+
+
+    function getModeFrames(modeId) {
+
+      const mode = resolveMode(payload, modeId);
+
+      return mode.frames || [];
+
+    }
+
+
+
+    function fillDateRangeSelects(modeId) {
+
+      const frames = getModeFrames(modeId);
+
+      const dates = frames.map((f) => f.date).filter(Boolean);
+
+      const startSel = document.getElementById("bcr-range-start");
+
+      const endSel = document.getElementById("bcr-range-end");
+
+      const keepStart = startSel.value;
+
+      const keepEnd = endSel.value;
+
+      startSel.innerHTML = '<option value="">最早</option>';
+
+      endSel.innerHTML = '<option value="">最晚</option>';
+
+      dates.forEach((d) => {
+
+        startSel.innerHTML += `<option value="${d}">${d}</option>`;
+
+        endSel.innerHTML += `<option value="${d}">${d}</option>`;
+
+      });
+
+      if (keepStart && dates.includes(keepStart)) startSel.value = keepStart;
+
+      if (keepEnd && dates.includes(keepEnd)) endSel.value = keepEnd;
+
+      if (dates.length) {
+
+        document.getElementById("bcr-date-start").textContent = dates[0];
+
+        document.getElementById("bcr-date-end").textContent = dates[dates.length - 1];
+
+      }
+
+    }
+
+
+
+    function updateScrubMax() {
+
+      const scrub = document.getElementById("bcr-scrub");
+
+      const max = race ? Math.max(0, race._activeFrames.length - 1) : 0;
+
+      scrub.max = String(Math.max(1, max));
+
+      if (!scrubbing && race) {
+
+        scrub.value = String(race.dayIndex);
+
+      }
+
+    }
+
+
+
+    function syncTimelineUI(detail) {
+
+      const scrub = document.getElementById("bcr-scrub");
+
+      if (!scrubbing && detail.frameIndex !== undefined) {
+
+        scrub.value = String(detail.frameIndex);
+
+      }
+
+      if (detail.date) {
+
+        document.getElementById("bcr-date-current").textContent = detail.date;
+
+      }
+
+    }
+
+
+
+    function applyFilters() {
+
+      if (!race) return;
+
+      race.setFilters({
+
+        year: document.getElementById("bcr-year").value,
+
+        countries: countryPicker ? countryPicker.getSelected() : new Set(),
+
+        genre: document.getElementById("bcr-genre").value,
+
+        start: document.getElementById("bcr-range-start").value,
+
+        end: document.getElementById("bcr-range-end").value,
+
+      });
+
+      updateScrubMax();
+
+      syncTimelineUI({ frameIndex: race.dayIndex, date: race._activeFrames[race.dayIndex]?.date });
+
+    }
+
+
+
+    function mountRace(modeId, autoplay = false) {
+
+      const mode = resolveMode(payload, modeId);
+
+      currentMode = modeId;
+
+
+
+      if (race) race.destroy();
+
+      document.getElementById("bcr-title").textContent = mode.title;
+
+
+
+      const chartEl = document.getElementById("bcr-chart");
+
+      const speedSec = getSpeedSec();
+
+      const topN = parseInt(document.getElementById("bcr-topn").value, 10) || 12;
+
+      race = new BarChartRace(chartEl, {
+
+        title: mode.title,
+
+        subtitle: mode.subtitle,
+
+        frames: mode.frames,
+
+        topN,
+
+        rowHeight: topN > 30 ? 36 : 44,
+
+        dayDuration: speedSec * 1000,
+
+        valueSuffix: payload.valueSuffix || "",
+
+      });
+
+
+
+      fillDateRangeSelects(modeId);
+
+      refreshFilterSelects();
+
+      applyFilters();
+
+      updateScrubMax();
+
+      if (autoplay) setTimeout(() => race.play(), 400);
+
+    }
+
+
+
+    function showCoverage(data) {
+
+      const el = document.getElementById("bcr-coverage");
+
+      if (!el || !data.coverage) return;
+
+      el.textContent = data.coverage.note || "";
+
+    }
+
+
+
+    async function init() {
+
+      payload = await loadData();
+
+      showCoverage(payload);
+
+
+
+      const meta = payload.meta || {};
+
+      fillSelect("bcr-year", meta.years || [], "全部年份");
+
+
+
+      const modeSelect = document.getElementById("bcr-mode");
+
+      const modeIds = payload.modes ? Object.keys(payload.modes) : ["default"];
+
+
+
+      const modeLabel = document.querySelector(".bcr-mode-label");
+
+      if (modeIds.length <= 1) {
+
+        if (modeLabel) modeLabel.style.display = "none";
+
+      } else {
+
+        modeSelect.innerHTML = modeIds
+
+          .map((id) => {
+
+            const m = resolveMode(payload, id);
+
+            return `<option value="${id}">${m.label || id}</option>`;
+
+          })
+
+          .join("");
+
+      }
+
+
+
+      const defaultMode = payload.defaultMode || modeIds[0];
+
+      if (modeIds.length > 1) modeSelect.value = defaultMode;
+
+      countryPicker = new CountryMultiSelect("bcr-country-picker", { onChange: applyFilters });
+
+      mountRace(defaultMode, true);
+
+
+
+      const chartEl = document.getElementById("bcr-chart");
+
+      chartEl.addEventListener("bcr-progress", (e) => {
+
+        syncTimelineUI(e.detail);
+
+      });
+
+
+
+      modeSelect.onchange = () => mountRace(modeSelect.value, true);
+
+      document.getElementById("bcr-play").onclick = () => race.play();
+
+      document.getElementById("bcr-pause").onclick = () => race.pause();
+
+      document.getElementById("bcr-reset").onclick = () => race.reset();
+
+      document.getElementById("bcr-final").onclick = () => race.jumpToEnd();
+
+
+
+      document.getElementById("bcr-year").onchange = () => {
+
+        refreshFilterSelects();
+
+        applyFilters();
+
+      };
+
+      document.getElementById("bcr-genre").onchange = applyFilters;
+
+      document.getElementById("bcr-range-start").onchange = () => {
+
+        refreshFilterSelects();
+
+        applyFilters();
+
+      };
+
+      document.getElementById("bcr-range-end").onchange = () => {
+
+        refreshFilterSelects();
+
+        applyFilters();
+
+      };
+
+
+
+      document.getElementById("bcr-topn").onchange = () => {
+
+        if (!race) return;
+
+        const topN = parseInt(document.getElementById("bcr-topn").value, 10) || 12;
+
+        race.rowHeight = topN > 30 ? 36 : 44;
+
+        race.setTopN(topN);
+
+      };
+
+
+
+      const scrub = document.getElementById("bcr-scrub");
+
+      scrub.addEventListener("pointerdown", () => {
+
+        scrubbing = true;
+
+        race?.pause();
+
+      });
+
+      scrub.addEventListener("pointerup", () => {
+
+        scrubbing = false;
+
+      });
+
+      scrub.addEventListener("input", () => {
+
+        if (!race) return;
+
+        race.goToFrame(parseInt(scrub.value, 10) || 0);
+
+      });
+
+
+
+      const speedInput = document.getElementById("bcr-speed");
+      const speedNum = document.getElementById("bcr-speed-num");
+
+      speedInput.oninput = () => applySpeed(parseFloat(speedInput.value));
+
+      speedNum.onchange = () => applySpeed(parseFloat(speedNum.value));
+
+      speedNum.onblur = () => applySpeed(parseFloat(speedNum.value));
+
+      speedNum.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          applySpeed(parseFloat(speedNum.value));
+          speedNum.blur();
+        }
+      });
+
+    }
+
+
+
+    init().catch((err) => {
+
+      document.getElementById("bcr-title").textContent =
+
+        "無法載入 data.json：" + err.message;
+
+      document.getElementById("bcr-coverage").textContent =
+
+        "請用本機伺服器開啟（例如 python -m http.server），不要直接雙擊 HTML。";
+
+    });
+
+  </script>
+
+</body>
+
+</html>
+
+

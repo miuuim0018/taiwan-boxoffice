@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>月票房長條圖 — 爛片現形鏡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="bar-race.css" />
+
+</head>
+
+<body class="bcr-page bcr-page--monthly">
+
+  <div class="bcr-wrap">
+
+    <nav class="bcr-nav">
+
+      <a class="bcr-nav-link" href="home.html">總覽</a>
+
+      <a class="bcr-nav-link" href="index.html">排行榜動畫</a>
+
+      <a class="bcr-nav-link bcr-nav-link--active" href="monthly.html">月票房長條圖</a>
+
+      <a class="bcr-nav-link" href="champions.html">年度排行</a>
+
+      <a class="bcr-nav-link" href="analytics.html">票房分析</a>
+
+      <a class="bcr-nav-link" href="about.html">資料說明</a>
+
+    </nav>
+
+
+
+    <header class="month-hero">
+
+      <div class="month-hero-text">
+
+        <p class="month-hero-kicker">官方週票房 · 按月加總</p>
+
+        <h1 id="month-title">月票房排行</h1>
+
+        <p class="bcr-coverage" id="month-subtitle">載入中…</p>
+
+      </div>
+
+      <div class="month-stats" id="month-stats">
+
+        <div class="month-stat"><span class="month-stat-label">月票房 Top15</span><strong id="stat-total">—</strong></div>
+
+        <div class="month-stat"><span class="month-stat-label">冠軍</span><strong id="stat-top">—</strong></div>
+
+        <div class="month-stat"><span class="month-stat-label">上榜片數</span><strong id="stat-count">—</strong></div>
+
+      </div>
+
+    </header>
+
+
+
+    <div class="month-toolbar">
+
+      <div class="bcr-filters month-filters">
+
+        <label>
+
+          年份
+
+          <select id="month-year"></select>
+
+        </label>
+
+        <div class="bcr-country-filter-wrap" id="month-country-wrap">
+
+          <span class="bcr-country-filter-title">國別（可多選）</span>
+
+          <div id="month-country-picker"></div>
+
+        </div>
+
+        <label id="month-genre-wrap">
+
+          片種
+
+          <select id="month-genre"><option value="all">全部片種</option></select>
+
+        </label>
+
+      </div>
+
+      <div class="month-view-toggle">
+
+        <button type="button" class="month-view-btn month-view-btn--active" data-view="rank">橫向排行</button>
+
+        <button type="button" class="month-view-btn" data-view="column">觀影排名圖</button>
+
+        <button type="button" class="month-view-btn" data-view="pie">國別圓餅圖</button>
+
+        <button type="button" class="month-view-btn" data-view="rating">TMDB 評分</button>
+
+      </div>
+
+      <div class="month-pills" id="month-pills"></div>
+
+    </div>
+
+
+
+    <div class="bcr-stage bcr-stage--chart month-panel" id="panel-rank">
+
+      <div class="month-chart-head">
+
+        <span>排名</span>
+
+        <span>海報</span>
+
+        <span>片名 / 類型</span>
+
+        <span>票房（萬元）</span>
+
+      </div>
+
+      <div class="month-chart" id="month-chart"></div>
+
+      <p class="month-rank-hint" id="month-rank-hint">點選電影列查看劇情介紹</p>
+
+    </div>
+
+
+
+    <div class="month-column-panel" id="panel-column" hidden>
+
+      <h2 class="month-column-title">觀影排名</h2>
+
+      <p class="month-column-note">長條：當月售票數｜折線：當月銷售金額（萬元）</p>
+
+      <div class="month-column-canvas-wrap">
+
+        <canvas id="month-column-chart"></canvas>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="month-pie-panel" id="panel-pie" hidden>
+
+      <h2 class="month-pie-title">當月各國票房占比</h2>
+
+      <p class="month-pie-note">依官方週票房加總，以銷售金額（萬元）計 · 點選國別查看該國上映片單</p>
+
+      <div class="month-pie-wrap">
+
+        <div class="month-pie-canvas-wrap">
+
+          <canvas id="month-pie-chart"></canvas>
+
+        </div>
+
+        <div class="month-pie-legend" id="month-pie-legend"></div>
+
+      </div>
+
+      <div class="month-pie-detail" id="month-pie-detail" hidden>
+
+        <div class="month-pie-detail-head">
+
+          <div>
+
+            <h3 id="month-pie-detail-title">國別片單</h3>
+
+            <p class="month-pie-detail-note" id="month-pie-detail-note"></p>
+
+          </div>
+
+          <button type="button" class="month-pie-detail-close" id="month-pie-detail-close">關閉</button>
+
+        </div>
+
+        <div class="month-chart-head">
+
+          <span>排名</span>
+
+          <span>海報</span>
+
+          <span>片名 / 類型</span>
+
+          <span>票房（萬元）</span>
+
+        </div>
+
+        <div class="month-chart" id="month-pie-detail-list"></div>
+
+      </div>
+
+    </div>
+
+
+
+    <footer class="bcr-footer">
+
+      爛片現形鏡 專題延伸｜
+
+      <a href="index.html">返回排行榜動畫</a>
+
+      ｜資料來源：TFAI 官方統計
+
+    </footer>
+
+  </div>
+
+  <div class="champ-info-modal" id="month-info-modal" hidden>
+    <div class="champ-info-modal-backdrop" id="month-info-modal-backdrop"></div>
+    <div
+      class="champ-info-modal-panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="month-info-modal-title"
+    >
+      <button type="button" class="champ-info-modal-close" id="month-info-modal-close" aria-label="關閉">×</button>
+      <p class="champ-info-kicker">電影介紹</p>
+      <div class="champ-info-inner" id="month-info-modal-body"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <script src="filter-utils.js"></script>
+
+  <script src="rating-utils.js"></script>
+
+  <script src="monthly.js"></script>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>台灣電影票房總覽 — 爛片現形鏡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="bar-race.css" />
+</head>
+<body class="bcr-page bcr-page--monthly">
+  <div class="bcr-wrap bcr-wrap--wide">
+    <nav class="bcr-nav">
+      <a class="bcr-nav-link bcr-nav-link--active" href="home.html">總覽</a>
+      <a class="bcr-nav-link" href="index.html">排行榜動畫</a>
+      <a class="bcr-nav-link" href="monthly.html">月票房長條圖</a>
+      <a class="bcr-nav-link" href="champions.html">年度排行</a>
+      <a class="bcr-nav-link" href="analytics.html">票房分析</a>
+      <a class="bcr-nav-link" href="about.html">資料說明</a>
+    </nav>
+
+    <header class="hub-hero">
+      <p class="month-hero-kicker">TFAI 官方週票房 · 2017 起</p>
+      <h1>台灣電影票房資料總覽</h1>
+      <p class="bcr-coverage" id="hub-subtitle">載入中…</p>
+    </header>
+
+    <section class="hub-cards">
+      <a class="hub-card" href="index.html">
+        <span class="hub-card-icon">▶</span>
+        <h2>排行榜動畫</h2>
+        <p>每週在映或歷史累計 Top 榜，可拖曳進度、篩選年份與 Top 100。</p>
+      </a>
+      <a class="hub-card" href="monthly.html">
+        <span class="hub-card-icon">📊</span>
+        <h2>月票房長條圖</h2>
+        <p>各月排行、觀影排名、國別圓餅；點國別可看該國片單。</p>
+      </a>
+      <a class="hub-card" href="champions.html">
+        <span class="hub-card-icon">🏆</span>
+        <h2>年度排行</h2>
+        <p>票房／在映週數／週冠等多維 Top 10；片種、國別冠軍可鑽取。</p>
+      </a>
+      <a class="hub-card" href="analytics.html">
+        <span class="hub-card-icon">📈</span>
+        <h2>票房分析</h2>
+        <p>單片走勢、雙片對決、檔期專題、國片占比、片種熱度、票房 vs TMDB 評分。</p>
+      </a>
+    </section>
+
+    <section class="hub-market">
+      <div class="hub-market-head">
+        <h2>院線總量趨勢</h2>
+        <div class="analytics-toggle">
+          <button type="button" class="analytics-toggle-btn analytics-toggle-btn--active" data-market="monthly">每月</button>
+          <button type="button" class="analytics-toggle-btn" data-market="weekly">每週</button>
+        </div>
+      </div>
+      <p class="analytics-note" id="hub-market-note"></p>
+      <div class="analytics-canvas-wrap analytics-canvas-wrap--short">
+        <canvas id="hub-market-chart"></canvas>
+      </div>
+      <p class="hub-market-hint">長條：全台週票房加總（萬元）｜折線：平均票價（元／張）</p>
+    </section>
+
+    <footer class="bcr-footer">
+      <a href="about.html">資料來源與方法說明</a>
+      ｜<a href="../output/index.html">返回主儀表板</a>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>
